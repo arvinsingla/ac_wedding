@@ -1,7 +1,4 @@
-@import "settings";
 // @import "foundation";
-// @import "components";
-
 // Or selectively include components
 // @import
 //   "foundation/components/accordion",
@@ -40,5 +37,10 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-
-@import "foundation/components/grid";
+@import
+  "settings",
+  "foundation/components/grid",
+  "foundation/components/type",
+  "foundation/components/buttons",
+  "foundation/components/button-groups",
+  "components";

@@ -24,7 +24,7 @@
 // $base-line-height: 150%;
 
 // We use this to control whether or not CSS classes come through in the gem files.
-// $include-html-classes: true;
+$include-html-classes: true;
 // $include-print-styles: true;
 // $include-html-global-classes: $include-html-classes;
 
@@ -38,12 +38,22 @@ $row-width: 100%;
 
 // Global
 
+// Custom Colors
+
+$white-color: #FFF;
+$light-grey-color: #F6F6F6;
+$middle-grey-color: #CCC;
+$grey-color: #666;
+$dark-grey-color: #999;
+$charcoal-color: #333;
+$peach-color: #FFC189;
+
 // We use these to control various global styles
 // $body-bg: #fff;
-// $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: normal;
-// $body-font-style: normal;
+$body-font-color: $dark-grey-color;
+$body-font-family: "skolar", serif;
+$body-font-weight: 300;
+$body-font-style: normal;
 
 // We use this to control font-smoothing
 // $font-smoothing: antialiased;
@@ -62,7 +72,7 @@ $row-width: 100%;
 // $info-color: #a0d3e8;
 
 // We use these to make sure border radius matches unless we want it different.
-// $global-radius: 3px;
+$global-radius: 3px;
 // $global-rounded: 1000px;
 
 // We use these to control inset shadow shiny edges and depressions.
@@ -115,25 +125,25 @@ $row-width: 100%;
 // TYPOGRAPHY
 //
 
-// $include-html-type-classes: $include-html-classes;
+$include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
+$header-font-family: "skolar", serif;
 // $header-font-weight: normal;
 // $header-font-style: normal;
-// $header-font-color: #222;
-// $header-line-height: 1.4;
-// $header-top-margin: .2rem;
-// $header-bottom-margin: .5rem;
+$header-font-color: $charcoal-color;
+$header-line-height: 100%;
+$header-top-margin: 0;
+$header-bottom-margin: 0.5rem;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-// $h1-font-size: rem-calc(44);
-// $h2-font-size: rem-calc(37);
-// $h3-font-size: rem-calc(27);
-// $h4-font-size: rem-calc(23);
-// $h5-font-size: rem-calc(18);
-// $h6-font-size: 1rem;
+$h1-font-size: 4.063rem;
+$h2-font-size: 3.438rem;
+$h3-font-size: 2.5rem;
+$h4-font-size: 1rem;
+$h5-font-size: 0.813rem;
+$h6-font-size: 0.688rem;
 
 // These control how subheaders are styled.
 // $subheader-line-height: 1.4;
@@ -147,10 +157,10 @@ $row-width: 100%;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
 
 // We use these to style paragraphs
-// $paragraph-font-family: inherit;
-// $paragraph-font-weight: normal;
-// $paragraph-font-size: 1rem;
-// $paragraph-line-height: 1.6;
+$paragraph-font-family: inherit;
+$paragraph-font-weight: 300;
+$paragraph-font-size: 1.125rem;
+$paragraph-line-height: 1.6;
 // $paragraph-margin-bottom: rem-calc(20);
 // $paragraph-aside-font-size: rem-calc(14);
 // $paragraph-aside-line-height: 1.35;
@@ -185,8 +195,8 @@ $row-width: 100%;
 
 // We use these to style blockquotes
 // $blockquote-font-color: scale-color($header-font-color, $lightness: 35%);
-// $blockquote-padding: rem-calc(9 20 0 19);
-// $blockquote-border: 1px solid #ddd;
+$blockquote-padding: 0.85rem 0;
+$blockquote-border: 0;
 // $blockquote-cite-font-size: rem-calc(13);
 // $blockquote-cite-font-color: scale-color($header-font-color, $lightness: 23%);
 // $blockquote-cite-link-color: $blockquote-cite-font-color;
@@ -324,7 +334,7 @@ $row-width: 100%;
 // $include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
+// $button  -tny: rem-calc(10);
 // $button-sml: rem-calc(14);
 // $button-med: rem-calc(16);
 // $button-lrg: rem-calc(18);
@@ -334,28 +344,28 @@ $row-width: 100%;
 // $button-margin-bottom: rem-calc(20);
 
 // We use these to control button text styles.
-// $button-font-family: $body-font-family;
-// $button-font-color: #fff;
+$button-font-family: "proxima-nova",sans-serif;
+$button-font-color: #fff;
 // $button-font-color-alt: #333;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
 // $button-font-lrg: rem-calc(20);
-// $button-font-weight: normal;
+$button-font-weight: 600;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
 // $button-function-factor: -20%;
 
 // We use these to control button border styles.
-// $button-border-width: 0px;
-// $button-border-style: solid;
-// $bg: $primary-color;
+$button-border-width: 1px;
+$button-border-style: solid;
+$bg: $charcoal-color;
 // $button-border-color: scale-color($bg, $lightness: $button-function-factor);
 
 // We use this to set the default radius used throughout the core.
-// $button-radius: $global-radius;
-// $button-round: $global-rounded;
+$button-radius: $global-radius;
+//$button-round: $global-rounded;
 
 // We use this to set default opacity for disabled buttons.
 // $button-disabled-opacity: 0.7;

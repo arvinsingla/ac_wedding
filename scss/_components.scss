@@ -1,0 +1,92 @@
+// Typography
+
+h1 {
+  letter-spacing: -0.045rem;
+}
+h2 {
+  letter-spacing: -0.035rem;
+}
+h3 {
+  letter-spacing: -0.025rem;
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+h4, h5, h6 {
+  text-transform: uppercase;
+  font-family: "proxima-nova",sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+
+h4 {
+  letter-spacing: 0.15rem;
+}
+
+p {
+  letter-spacing: 0.020em;
+}
+
+p.intro {
+  font-family: "proxima-nova",sans-serif;
+  letter-spacing: 0;
+  color: $charcoal-color;
+}
+
+blockquote {
+  font-family: "proxima-nova",sans-serif;
+	font-style: italic;
+	font-weight: 100;
+	font-size: 2.188rem;
+	letter-spacing: -0.025;
+	line-height: 100%;
+	color: $peach-color;
+  max-width: 24rem
+}
+
+// Buttons
+
+.button {
+  padding: 1rem 0;
+  min-width: rem-calc(250px);
+  text-transform: uppercase;
+  font-size: $h5-font-size;
+  letter-spacing: 0.1rem;
+  background: $charcoal-color;
+  border-color: $charcoal-color;
+  &:hover {
+    background: $peach-color;
+    border-color: $peach-color;
+  }
+}
+
+.button.secondary {
+  background: $white-color;
+  color: $peach-color;
+  border-color: $peach-color;
+  &:hover {
+    background: $peach-color;
+    color: $white-color;
+    border-color: $peach-color;
+  }
+}
+
+.button.tertiary {
+  background: $white-color;
+  color: $middle-grey-color;
+  border-color: $middle-grey-color;
+  &:hover {
+    background: $middle-grey-color;
+    color: $white-color;
+    border-color: $middle-grey-color;
+  }
+}
+
+// Icons & Avatars
+
+img.avatar,
+img.icon {
+
+}
