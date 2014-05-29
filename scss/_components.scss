@@ -1,23 +1,39 @@
+// Layout
+
+div.row {
+  margin: rem-calc(40px) 0;
+}
+
+// Browser quirks
+
+::selection {
+   background: $light-peach-color; /* Safari */
+   color: $charcoal-color;
+}
+
+::-moz-selection {
+   background: $light-peach-color; /* Firefox */
+   color: $charcoal-color;
+}
 // Typography
 
 h1 {
+  font-weight: 600;
   letter-spacing: -0.045rem;
 }
 h2 {
   letter-spacing: -0.035rem;
+  font-weight: 400;
 }
 h3 {
   letter-spacing: -0.025rem;
-}
-
-h1, h2, h3 {
   font-weight: 400;
 }
 
 h4, h5, h6 {
   text-transform: uppercase;
-  font-family: "proxima-nova",sans-serif;
-  font-weight: 600;
+  font-family: $secondary-font-family;
+  font-weight: 700;
   letter-spacing: 0.1rem;
 }
 
@@ -26,67 +42,305 @@ h4 {
 }
 
 p {
-  letter-spacing: 0.020em;
+  letter-spacing: 0.020rem;
 }
 
 p.intro {
-  font-family: "proxima-nova",sans-serif;
+  font-family: $secondary-font-family;
   letter-spacing: 0;
   color: $charcoal-color;
+  font-size: 1.250em;
 }
 
 blockquote {
-  font-family: "proxima-nova",sans-serif;
+  font-family: $secondary-font-family;
 	font-style: italic;
 	font-weight: 100;
 	font-size: 2.188rem;
 	letter-spacing: -0.025;
 	line-height: 100%;
 	color: $peach-color;
-  max-width: 24rem
+  max-width: 24rem;
 }
+
+a {
+	color: $peach-color;
+	font-weight:400;
+	text-decoration: none;
+	border-bottom: 1px solid #ffc189;
+  padding-bottom: 0.015rem;
+  @include single-transition(all, 0.75s, false, false);
+  &:hover {
+	   color: $black-color;
+   }
+}
+
 
 // Buttons
 
 .button {
   padding: 1rem 0;
   min-width: rem-calc(250px);
-  text-transform: uppercase;
-  font-size: $h5-font-size;
-  letter-spacing: 0.1rem;
   background: $charcoal-color;
   border-color: $charcoal-color;
+  overflow: hidden;
+  @include user-select(none);
+  @include element-text(center);
   &:hover {
     background: $peach-color;
     border-color: $peach-color;
+    span {
+      color: $peach-color;
+    }
+    span + span {
+      top: 16px;
+      color: $button-font-color;
+    }
   }
-}
-
-.button.secondary {
-  background: $white-color;
-  color: $peach-color;
-  border-color: $peach-color;
-  &:hover {
-    background: $peach-color;
-    color: $white-color;
+  // Secondary Button Style
+  &.secondary {
+    background: $white-color;
+    color: $peach-color;
     border-color: $peach-color;
+    &:hover {
+      background: $peach-color;
+      color: $white-color;
+      border-color: $peach-color;
+    }
   }
-}
-
-.button.tertiary {
-  background: $white-color;
-  color: $middle-grey-color;
-  border-color: $middle-grey-color;
-  &:hover {
-    background: $middle-grey-color;
-    color: $white-color;
+  // Tertiary Button Style
+  &.tertiary {
+    background: $white-color;
+    color: $middle-grey-color;
     border-color: $middle-grey-color;
+    &:hover {
+      background: $middle-grey-color;
+      color: $white-color;
+      border-color: $middle-grey-color;
+      // Set the hover colour for the spans.
+      span {
+        color: $middle-grey-color;
+      }
+      span + span {
+        color: $white-color;
+      }
+    }
+  }
+  // Add the transition for the spans.
+  span {
+    @include single-transition(all, 0.5s, false, false);
+  }
+  // Move the second span out of the way.
+  > span + span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
   }
 }
 
 // Icons & Avatars
 
-img.avatar,
-img.icon {
 
+.icon {
+  width: $eighty-px;
+  height: $eighty-px;
+  background-size: $eighty-px $eighty-px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  &.suit {
+    background-image: url(../icon/ac-icon-suit.svg);
+  }
+  &.dress {
+    background-image: url(../icon/ac-icon-dress.svg);
+  }
+  &.church {
+    background-image: url(../icon/ac-icon-church.svg);
+  }
+  &.dinner {
+    background-image: url(../icon/ac-icon-dinner.svg);
+  }
+  &.mail {
+    background-image: url(../icon/ac-icon-mail.svg);
+  }
+  &.reception {
+    background-image: url(../icon/ac-icon-reception.svg);
+  }
+  &.facebook {
+    background-image: url(../icon/ac-icon-facebook.svg);
+  }
+  &.twitter {
+    background-image: url(../icon/ac-icon-twitter.svg);
+  }
+}
+
+img.avatar {
+  width: $eighty-px;
+  height: rem$eighty-px;
+  &.inactive {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+  }
+}
+
+// Image + Text overlays
+
+.wedding-party-person {
+  width: rem-calc(306px);
+  height: rem-calc(330px);
+  position: relative;
+  img {
+    width: 100%;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    width: rem-calc(306px);
+    height: rem-calc(306px);
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: $light-grey-color;
+    @include opacity(0);
+    @include single-transition(all, 0.4s, false, false);
+    font-style:italic;
+    text-align: center;
+    padding-top: 130px;
+    span.name {
+      display: block;
+      margin-bottom: rem-calc(10px);
+      color: $light-grey-color;
+      font-size: 1.5rem;
+    }
+    span.title {
+      color: $middle-grey-color;
+    }
+  }
+  &:hover .overlay {
+    @include opacity(1);
+  }
+}
+
+// Forms
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0;
+}
+
+input {
+  @include element-text(inherit);
+  min-width: rem-calc(400px);
+  padding: rem-calc(16px) rem-calc(30px);
+  border: 1px solid $middle-grey-color;
+  margin: 0;
+  &.error {
+    border-color: red;
+    @include input-placeholder {
+      color: red;
+    }
+    z-index: 10;
+  }
+}
+
+.text-group {
+  input {
+    display: block;
+    position: relative;
+    &:first-of-type {
+      @include border-top-left-radius($global-radius);
+      @include border-top-right-radius($global-radius);
+    }
+    &:last-of-type {
+      @include border-bottom-left-radius($global-radius);
+      @include border-bottom-right-radius($global-radius);
+    }
+  }
+}
+
+.radio-group {
+  margin: rem-calc(20px) 0;
+  input {
+    display: none;
+    &[type="radio"]:checked+label {
+      background-color: $peach-color;
+      color: $white-color;
+      border-color: $peach-color;
+    }
+  }
+  &.selected {
+    label {
+      border: 1px solid $peach-color;
+    }
+  }
+  label {
+    min-width: rem-calc(200px);
+    padding: rem-calc(16px) 0;
+    border: 1px solid $middle-grey-color;
+    position: relative;
+    float: left;
+    @include element-text(center);
+    cursor: pointer;
+    @include single-transition(all, 0.5s, false, false);
+    &:hover {
+      color: $peach-color;
+    }
+    &:first-of-type {
+      @include border-top-left-radius($global-radius);
+      @include border-bottom-left-radius($global-radius);
+    }
+    &:last-of-type {
+      @include border-top-right-radius($global-radius);
+      @include border-bottom-right-radius($global-radius);
+    }
+  }
+}
+
+select {
+  width: rem-calc(400px);
+  padding: rem-calc(16px) rem-calc(30px);
+  border: 1px solid $middle-grey-color;
+  background: #fff url(../icon/ac-icon-arrow-down.png) no-repeat right 20px center;
+  color: $dark-grey-color;
+  float: left;
+  @include element-text(center);
+  height: rem-calc(50px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &:hover {
+    background: #fff url(../icon/ac-icon-arrow-down-black.png) no-repeat right 20px center;
+  }
+}
+
+// Colour Swatches
+
+.swatch {
+  width: rem-calc(100px);
+  height: rem-calc(100px);
+  display: inline-block;
+  color: $white-color;
+  background-color: $charcoal-color;
+  float: left;
+  @include element-text(center);
+  line-height: rem-calc(100px);
+  &.peach {
+    background-color: $peach-color;
+  }
+  &.light-grey {
+    background-color: $light-grey-color;
+    color: $grey-color;
+  }
+  &.middle-grey {
+    background-color: $middle-grey-color;
+  }
+  &.grey {
+    background-color: $grey-color;
+  }
+  &.dark-grey {
+    background-color: $dark-grey-color;
+  }
+  &.charcoal {
+    background-color: $charcoal-color;
+  }
 }
