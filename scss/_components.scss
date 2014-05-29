@@ -95,6 +95,7 @@ a {
     span + span {
       top: 16px;
       color: $button-font-color;
+      opacity: 1;
     }
   }
   // Secondary Button Style
@@ -136,6 +137,7 @@ a {
     left: 0;
     right: 0;
     top: 100%;
+    opacity: 0;
   }
 }
 
@@ -206,6 +208,12 @@ img.avatar {
     font-style:italic;
     text-align: center;
     padding-top: 130px;
+    overflow: hidden;
+    .text {
+      position: relative;
+      top: rem-calc(150px);
+      @include single-transition(all, 0.4s, false, false);
+    }
     span.name {
       display: block;
       margin-bottom: rem-calc(10px);
@@ -219,14 +227,24 @@ img.avatar {
   &:hover .overlay {
     @include opacity(1);
   }
+  &:hover .text {
+    top: 0;
+  }
 }
 
 // Forms
 
+/* Prevents focus highlighting on form fields*/
 input:focus,
 select:focus,
 textarea:focus {
   outline: 0;
+}
+
+/* Removes placeholder text in text areas when selected */
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.2s ease;
+  opacity: 0;
 }
 
 input {
@@ -235,6 +253,15 @@ input {
   padding: rem-calc(16px) rem-calc(30px);
   border: 1px solid $middle-grey-color;
   margin: 0;
+  @include single-transition(border-color, 0.4s, false, false);
+  &:hover {
+    border-color: $grey-color;
+    z-index: 9;
+  }
+  &:focus {
+    border-color: $peach-color;
+    z-index: 9;
+  }
   &.error {
     border-color: red;
     @include input-placeholder {
@@ -301,7 +328,11 @@ select {
   width: rem-calc(400px);
   padding: rem-calc(16px) rem-calc(30px);
   border: 1px solid $middle-grey-color;
-  background: #fff url(../icon/ac-icon-arrow-down.png) no-repeat right 20px center;
+  background-color: #fff;
+  background-image: $arrow-down-grey;
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: rem-calc(12px) rem-calc(16px);
   color: $dark-grey-color;
   float: left;
   @include element-text(center);
@@ -309,7 +340,13 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   &:hover {
-    background: #fff url(../icon/ac-icon-arrow-down-black.png) no-repeat right 20px center;
+    background-image: $arrow-down-black;
+  }
+  &.selected {
+    background-image: $arrow-down-peach;
+    &:hover {
+      background-image: $arrow-down-peach;
+    }
   }
 }
 
