@@ -1,186 +1,106 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" ng-app="weddingApp">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AC Wedding</title>
     <link rel="stylesheet" href="stylesheets/app.css" />
+
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
 
-  <div class="row">
-    <div class="large-12 columns">
 
-      <div class="swatch peach">FFC189</div>
-      <div class="swatch light-grey">F6F6F6</div>
-      <div class="swatch middle-grey">CCCCCC</div>
-      <div class="swatch grey">999999</div>
-      <div class="swatch dark-grey">666666</div>
-      <div class="swatch charcoal">333333</div>
-
-    </div>
-  </div>
-
-    <div class="row">
-      <div class="large-12 columns">
-
-        <!-- Basic Headers -->
-        <h1>H1 Hero Title</h1>
-        <h2>H2 Large Title</h2>
-        <h3>H3 Medium Title</h3>
-        <h4>H4 Small Title</h4>
-        <h5>H5 Sub Title or Button Text</h5>
-        <h6>H6 Micro Title</h6>
-
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-12 columns">
-
-        <p class="intro">
-          <strong>Body Copy</strong><br/>
-          Lorem ipsum dolor sit amet, <a href="#">consectetur adipiscing</a> elit. Donec sollicitudin a eros at ultricies.
-          Maecenas erat tortor, sodales commodo lectus id, blandit dapibus quam. Donec vel vestibulum turpis,
-          non dictum erat. Vivamus nulla felis, semper sed rutrum nec, dignissim sit amet est. Interdum et
-          malesuada fames ac ante ipsum primis in faucibus. Nam vitae enim nec ligula gravida luctus a et felis.
-          Integer adipiscing dignissim ultrices. Mauris gravida porttitor ligula. Aliquam condimentum nec ligula
-          quis cursus. Duis pellentesque, ante vitae eleifend dictum, risus neque vulputate metus, eleifend
-          tristique metus felis quis nunc. Mauris nec est eu augue vehicula rhoncus. Nullam non nunc a mi
-          accumsan posuere quis a purus.
-        </p>
-
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-12 columns">
-
-        <p>
-          <em>Body Copy</em><br/>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sollicitudin a eros at ultricies.
-          Maecenas erat tortor, sodales commodo lectus id, blandit dapibus quam. Donec vel vestibulum turpis,
-          non dictum erat. Vivamus nulla felis, semper sed rutrum nec, dignissim sit amet est. Interdum et
-          malesuada fames ac ante ipsum primis in faucibus. Nam vitae enim nec ligula gravida luctus a et felis.
-          Integer adipiscing dignissim ultrices. Mauris gravida <a href="#">porttitor ligula</a>. Aliquam condimentum nec ligula
-          quis cursus. Duis pellentesque, ante vitae eleifend dictum, risus neque vulputate metus, eleifend
-          tristique metus felis quis nunc. Mauris nec est eu augue vehicula rhoncus. Nullam non nunc a mi
-          accumsan posuere quis a purus.
-        </p>
-
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="large-12 columns">
-
-        <blockquote>
-          "This is what a pull quote and or testimonial will look like. Pretty fucking cool, eh?"
-        </blockquote>
-
-      </div>
-    </div>
-
-
-    <div class="row">
-      <div class="large-12 columns">
-
-        <div class="wedding-party-person">
-          <img src="images/wedding-party/bp-shannon.png">
-          <div class="overlay">
-            <div class="text">
-              <span class="name">Jane Doe</span>
-              <span class="title">maid of honor</span>
-            </div>
-          </div>
+    <div class="row intro">
+      <div class="small-12 medium-12 large-12 column">
+        <img class="row-image" data-interchange="[/images/bg-intro-mobile.jpg, (default)], [/images/bg-intro-tablet.jpg, (medium)], [/images/bg-intro.jpg, (large)]">
+        <div class="row-content with-background text-center">
+          <div class="logo white"></div>
+          <h1 class="white title">Claudia & Andrew are getting married</h1>
+          <h4 class="white date">On September 27, 2014 in San Antonio, TX</h4>
+          <a href="#" class="button quaternary radius wide"><span>Howdy! Go ahead and RSVP here</span><span>Alternate text on hover</span></a>
         </div>
-
-        <div class="wedding-party-person">
-          <img src="images/wedding-party/bp-mike.png">
-          <div class="overlay">
-            <div class="text">
-              <span class="name">John Doe</span>
-              <span class="title">best man</span>
-            </div>
-          </div>
+        <div class="row-footer text-center">
+          <h5 class="show-for-large-up">Scroll down</h5>
         </div>
-
       </div>
     </div>
 
-    <div class="row">
-      <div class="large-12 columns">
-
-        <img src="images/avatar-a.png" class="avatar">
-        <img src="images/avatar-c.png" class="avatar inactive">
-
+    <div class="row intro wedding-details-intro">
+      <div class="small-12 medium-12 large-12 column">
+        <img class="row-image" src="images/bg-weddingdetails.jpg">
       </div>
     </div>
 
-    <div class="row">
-      <div class="large-12 columns">
 
-        <div class="icon suit"></div>
-        <div class="icon dress"></div>
-
+    <div class="row intro accomodations-intro">
+      <div class="small-12 medium-12 large-12 column">
+        <img class="row-image" src="images/bg-accomodations.jpg">
       </div>
     </div>
 
-    <div class="row">
-      <div class="large-12 columns">
-
-        <a href="#" class="button radius"><span>Primary Button</span><span>Alternate text on hover</span></a>
-        <a href="#" class="button secondary radius"><span>Secondary Button</span><span>Alternate text on hover</span></a>
-        <a href="#" class="button tertiary radius"><span>Tertiary Button</span><span>Alternate text on hover</span></a>
-
+    <div class="row intro inbetween-intro">
+      <div class="small-12 medium-12 large-12 column">
+        <img class="row-image" src="images/bg-inbetween.jpg">
       </div>
     </div>
 
-    <div class="row">
-      <div class="large-12 columns">
-
-        <form>
-          <div class="radio-group">
-            <input type="radio" name="going" value="1" id="going"><label for="going">I'm Going</label>
-            <input type="radio" name="going" value="0" id="not-going"><label for="not-going">I'm Sorry :(</label>
-          </div>
-        </form>
-
+    <div class="row intro registry-intro">
+      <div class="small-12 medium-12 large-12 column">
+        <img class="row-image" src="images/bg-registry.jpg">
       </div>
     </div>
 
-    <div class="row">
-      <div class="large-12 columns">
+    <div class="row intro wedding-party-intro">
+      <div class="small-12 medium-12 large-12 column">
+        <img class="row-image" src="images/bg-weddingparty.jpg">
+      </div>
+    </div>
 
-        <form>
-          <div class="text-group">
-            <input type="text" placeholder="Inactive" disabled />
-            <input type="text" placeholder="Active" value="This is an active fiel"/>
-            <input type="text" class="error" placeholder="Phone #" />
-            <input type="text" placeholder="Are you bringing a +1? (Y/N)" />
-          </div>
+    <div class="row rsvp">
+      <div class="small-12 medium-12 large-12 column">
+        <img class="row-image" data-interchange="[/images/bg-rsvp-mobile.jpg, (default)], [/images/bg-rsvp.jpg, (medium)]">
+        <div class="row-content with-background text-center">
+          <h1 class="white title">We hope to see you there!</h1>
+          <a href="#" class="button quaternary radius wide"><span>Come on, RSVP already!</span><span>Alternate text on hover</span></a>
         </div>
-
+        <div class="row-footer text-center">
+          <p class="intro white">
+            Copyright &copy; Me.<br/>
+            Amazing photography courtesy of our good friend <a href="#" class="white">Josh Sam</a><br/>
+            Made with <3 by the beau for his belle.
+          </p>
+        </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="large-12 columns">
+      <!--
 
-        <form>
-          <select>
-            <option value="" selected>Please select your meal option</option>
-            <option value="chicken">I'd enjoy the chicken entree</option>
-            <option value="vegetarian">I'll have the vegetarian entree</option>
-          </select>
-        </form>
-
+      <div class="section">
+        <img id="weddingdetails-intro-file" src="images/bg-weddingdetails.jpg" />
       </div>
-    </div>
+
+      <div class="section">
+        <img id="accomodations-intro-file" src="images/bg-accomodations.jpg" />
+      </div>
+
+      <div class="section">
+        <img id="inbetween-intro-file" src="images/bg-inbetween.jpg" />
+      </div>
+
+      <div class="section">
+        <img id="registry-intro-file" src="images/bg-registry.jpg" />
+      </div>
+
+      <div class="section">
+        <img id="weddingparty-intro-file" src="images/bg-weddingparty.jpg" />
+      </div>
+
+    -->
 
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
+    <script src="bower_components/bower-skrollr/skrollr.js"></script>
     <script src="js/app.js"></script>
     <script type="text/javascript" src="//use.typekit.net/bgq8iid.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>

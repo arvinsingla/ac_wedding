@@ -1,0 +1,11 @@
+// Browser quirks
+
+::selection {
+   background: $light-peach-color; /* Safari */
+   color: $charcoal-color;
+}
+
+::-moz-selection {
+   background: $light-peach-color; /* Firefox */
+   color: $charcoal-color;
+}

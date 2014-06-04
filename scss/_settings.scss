@@ -7,7 +7,7 @@
 //
 
 // This is the default html and body font-size for the base rem value.
-// $rem-base: 16px;
+//$rem-base: 16px;
 
 // Allows the use of rem-calc() or lower-bound() in your settings
 @import "foundation/functions";
@@ -50,6 +50,7 @@ $charcoal-color: #333;
 $black-color: #000;
 $peach-color: #FFC189;
 $light-peach-color: #ffe5ce;
+$shadow-color: #a4a4a4;
 
 // We use these to control various global styles
 // $body-bg: #fff;
@@ -85,7 +86,7 @@ $global-radius: 5px;
 // $shiny-edge-color: rgba(#fff, .5);
 // $shiny-edge-active-color: rgba(#000, .2);
 
-// $column-gutter: rem-calc(30);
+$column-gutter: rem-calc(0);
 
 // Media Query Ranges
 // $small-range: (0em, 40em);
@@ -143,10 +144,12 @@ $header-bottom-margin: 0;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-$h1-font-size: 4.063rem;
+$h1-font-size: 2.188rem;
+$h1-font-size-large: 4.063rem;
 $h2-font-size: 3.438rem;
 $h3-font-size: 2.5rem;
-$h4-font-size: 1rem;
+$h4-font-size: 0.875rem;
+$h4-font-size-large: 1rem;
 $h5-font-size: 0.813rem;
 $h6-font-size: 0.688rem;
 

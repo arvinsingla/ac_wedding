@@ -1,0 +1,81 @@
+// Typography
+
+.peach {
+  color: $peach-color;
+}
+
+.black {
+  color: $black-color;
+}
+
+.white {
+  color: $white-color;
+}
+
+h1 {
+  font-weight: 600;
+  letter-spacing: -0.045rem;
+}
+
+h2 {
+  letter-spacing: -0.035rem;
+  font-weight: 400;
+}
+h3 {
+  letter-spacing: -0.025rem;
+  font-weight: 400;
+}
+
+h4, h5, h6 {
+  text-transform: uppercase;
+  font-family: $secondary-font-family;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+
+h4 {
+  letter-spacing: 0.15rem;
+}
+
+p {
+  letter-spacing: 0.020rem;
+}
+
+p.intro {
+  font-family: $secondary-font-family;
+  letter-spacing: 0;
+  font-size: 1.250em;
+}
+
+blockquote {
+  font-family: $secondary-font-family;
+  font-style: italic;
+  font-weight: 100;
+  font-size: 2.188rem;
+  letter-spacing: -0.025;
+  line-height: 100%;
+  color: $peach-color;
+}
+
+a {
+  color: $peach-color;
+  font-weight:400;
+  text-decoration: none;
+  border-bottom: 1px solid #ffc189;
+  padding-bottom: 0.015rem;
+  @include single-transition(all, 0.75s, false, false);
+  &:hover {
+     color: $black-color;
+   }
+}
+
+// Responsive components
+
+@media #{$medium-up} {
+  h1 {
+    font-size: $h1-font-size-large;
+  }
+  h4 {
+    font-size: $h4-font-size-large;
+  }
+}

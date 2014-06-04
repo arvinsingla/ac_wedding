@@ -1,0 +1,38 @@
+// Row Content
+
+.row {
+  @include single-box-shadow($shadow-color, 0px, rem-calc(5px), rem-calc(15px), false, false);
+  .row-content {
+    width: 100%;
+    &.with-background {
+      position: absolute;
+      top: 20%;
+    }
+  }
+  .row-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 5%;
+  }
+}
+
+// Individual Sections
+
+// Intro
+.intro,
+.rsvp {
+  .title {
+    padding: rem-calc(30px) 0;
+  }
+  .date {
+    padding-bottom: rem-calc(60px);
+  }
+}
+
+// Responsive components
+
+@media #{$medium-only} {
+  .row .row-content.with-background {
+    top: 10%;
+  }
+}

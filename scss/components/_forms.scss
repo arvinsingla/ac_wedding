@@ -1,0 +1,117 @@
+// Forms
+
+/* Prevents focus highlighting on form fields*/
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0;
+}
+
+/* Removes placeholder text in text areas when selected */
+[placeholder]:focus::-webkit-input-placeholder {
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+input {
+  @include element-text(inherit);
+  min-width: rem-calc(400px);
+  padding: rem-calc(16px) rem-calc(30px);
+  border: 1px solid $middle-grey-color;
+  margin: 0;
+  @include single-transition(border-color, 0.4s, false, false);
+  &:hover {
+    border-color: $grey-color;
+    z-index: 9;
+  }
+  &:focus {
+    border-color: $peach-color;
+    z-index: 9;
+  }
+  &.error {
+    border-color: red;
+    @include input-placeholder {
+      color: red;
+    }
+    z-index: 10;
+  }
+}
+
+.text-group {
+  input {
+    display: block;
+    position: relative;
+    &:first-of-type {
+      @include border-top-left-radius($global-radius);
+      @include border-top-right-radius($global-radius);
+    }
+    &:last-of-type {
+      @include border-bottom-left-radius($global-radius);
+      @include border-bottom-right-radius($global-radius);
+    }
+  }
+}
+
+.radio-group {
+  margin: rem-calc(20px) 0;
+  input {
+    display: none;
+    &[type="radio"]:checked+label {
+      background-color: $peach-color;
+      color: $white-color;
+      border-color: $peach-color;
+    }
+  }
+  &.selected {
+    label {
+      border: 1px solid $peach-color;
+    }
+  }
+  label {
+    min-width: rem-calc(200px);
+    padding: rem-calc(16px) 0;
+    border: 1px solid $middle-grey-color;
+    position: relative;
+    float: left;
+    @include element-text(center);
+    cursor: pointer;
+    @include single-transition(all, 0.5s, false, false);
+    &:hover {
+      color: $peach-color;
+    }
+    &:first-of-type {
+      @include border-top-left-radius($global-radius);
+      @include border-bottom-left-radius($global-radius);
+    }
+    &:last-of-type {
+      @include border-top-right-radius($global-radius);
+      @include border-bottom-right-radius($global-radius);
+    }
+  }
+}
+
+select {
+  width: rem-calc(400px);
+  padding: rem-calc(16px) rem-calc(30px);
+  border: 1px solid $middle-grey-color;
+  background-color: #fff;
+  background-image: $arrow-down-grey;
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: rem-calc(12px) rem-calc(16px);
+  color: $dark-grey-color;
+  float: left;
+  @include element-text(center);
+  height: rem-calc(50px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &:hover {
+    background-image: $arrow-down-black;
+  }
+  &.selected {
+    background-image: $arrow-down-peach;
+    &:hover {
+      background-image: $arrow-down-peach;
+    }
+  }
+}
