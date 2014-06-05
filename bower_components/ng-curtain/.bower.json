@@ -1,0 +1,18 @@
+{
+  "name": "ng-curtain",
+  "version": "0.1.1",
+  "devDependencies": {
+    "angular": "~1.0.6"
+  },
+  "homepage": "https://github.com/joshdmiller/ng-curtain-bower",
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "e808e2925c446b986120bf06fd7e3153748987d4"
+  },
+  "_source": "git://github.com/joshdmiller/ng-curtain-bower.git",
+  "_target": "~0.1.1",
+  "_originalSource": "ng-curtain",
+  "_direct": true
+}
