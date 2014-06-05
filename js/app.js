@@ -11,13 +11,13 @@ $(document).foundation();
     animation: 'fadeIn',
     backgroundcolor: 'transparent'
   });
-  */
   var s = skrollr.init({
     forceHeight: true,
     render: function(data) {
       //Debugging - Log the current scroll position.
     }
   });
+  */
 
   // Ensure each row has a higher z-index then the one below it.
   $('div.row').each(function(index) {
