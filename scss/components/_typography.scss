@@ -12,9 +12,14 @@
   color: $white-color;
 }
 
+.italic {
+  font-style: italic;
+}
+
 h1 {
   font-weight: 600;
   letter-spacing: -0.045rem;
+  padding: rem-calc(20px) 0;
 }
 
 h2 {

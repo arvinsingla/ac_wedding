@@ -16,9 +16,9 @@
 // Icons & Avatars
 
 .icon {
-  width: $eighty-px;
-  height: $eighty-px;
-  background-size: $eighty-px $eighty-px;
+  width: rem-calc(80px);
+  height: rem-calc(80px);
+  background-size: rem-calc(80px) rem-calc(80px);
   background-repeat: no-repeat;
   display: inline-block;
   &.suit {
@@ -40,10 +40,15 @@
     background-image: url(../icon/ac-icon-reception.svg);
   }
   &.facebook {
-    background-image: url(../icon/ac-icon-facebook.svg);
+    background-image: url(../icon/ac-icon-social-facebook.svg);
   }
   &.twitter {
-    background-image: url(../icon/ac-icon-twitter.svg);
+    background-image: url(../icon/ac-icon-social-twitter.svg);
+  }
+  &.small {
+    width: rem-calc(30px);
+    height: rem-calc(30px);
+    background-size: rem-calc(30px) rem-calc(30px);
   }
 }
 
