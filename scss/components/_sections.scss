@@ -16,6 +16,12 @@
   }
 }
 
+@media #{$large-only} {
+  .row.content {
+    min-height: rem-calc(900px);
+  }
+}
+
 // Individual Sections
 
 // Intro
@@ -96,21 +102,31 @@
 
 .wedding-details-content {
   padding: 10%;
-  h2 {
-    padding-bottom: rem-calc(20px);
-  }
   .intro-text {
-    padding-bottom: rem-calc(40px);
+    padding-bottom: rem-calc(50px);
+    h2 {
+      padding-bottom: rem-calc(20px);
+    }
+    p.intro {
+      max-width: rem-calc(880px);
+      margin: 0 auto;
+    }
   }
   .ceremony,
   .reception,
   .cocktail {
     padding: 0 rem-calc(10px);
+    max-width: rem-calc(320px);
+    margin: 0 auto;
     h4 {
-      padding: rem-calc(20px) 0;
+      padding: rem-calc(30px) 0 rem-calc(20px) 0;
     }
     .button {
-      margin-top: rem-calc(20px);
+      margin-top: rem-calc(10px);
+      margin-bottom: rem-calc(50px);
+    }
+    .icon {
+      margin-top: rem-calc(25px);
     }
   }
 }
@@ -122,8 +138,8 @@
     p {
       padding: 0 10%;
     }
-    .button {
-      margin-bottom: rem-calc(40px);
+    .icon {
+      margin-top: rem-calc(35px);
     }
   }
 }
@@ -134,6 +150,9 @@
   .cocktail {
     p {
       height: rem-calc(150px);
+    }
+    .icon {
+      margin-top: 0;
     }
   }
 }
@@ -152,9 +171,16 @@
     h5 {
       padding: rem-calc(5px) 0;
     }
+    p.hotel-info {
+      margin-bottom: rem-calc(30px);
+    }
   }
   .button {
-    margin-bottom: rem-calc(50px);
+    margin-top: rem-calc(30px);
+    margin-bottom: rem-calc(70px);
+  }
+  .courtyard .button {
+    margin-bottom: 0;
   }
 }
 
@@ -163,11 +189,13 @@
     .gunter,
     .courtyard {
       text-align: left;
-      p {
-        height: rem-calc(190px);
+      p.hotel-details {
+        height: rem-calc(160px);
+        margin-bottom: 0;
       }
     }
     .button {
+      margin-top: 0;
       margin-bottom: 0;
     }
   }
@@ -181,12 +209,14 @@
   }
   p.intro {
     padding-bottom: rem-calc(30px);
+    max-width: rem-calc(880px);
   }
   .double-border {
     border: rem-calc(1px) solid $light-grey-color;
     position: relative;
     padding: 5% 10%;
     margin: 0 auto;
+    text-align: left;
     &:before {
       content: " ";
       position: absolute;
@@ -200,6 +230,7 @@
     li {
       text-align: left;
       color: $peach-color;
+      padding: rem-calc(15px) 0;
     }
   }
 }
@@ -216,25 +247,35 @@
 // Love to hear from you
 .hear-from-you-content {
   padding: 10%;
-  h2 {
-    padding-bottom: rem-calc(20px);
-  }
   a {
     color: $black-color;
     text-decoration: none;
     border-bottom: 0;
+    &:hover {
+      color: $peach-color;
+    }
   }
-  .twitter-content,
-  .mail-content {
-    padding-bottom: rem-calc(50px);
+  .icon {
+    margin-top: rem-calc(75px);
+    margin-bottom: rem-calc(20px);
+  }
+}
+
+@media #{$medium-only} {
+  .hear-from-you-content {
+    .icon {
+      margin-top: rem-calc(85px);
+    }
   }
 }
 
 @media #{$large-only} {
   .hear-from-you-content {
-    .twitter-content,
-    .mail-content {
-      padding-bottom: 0;
+    h2 {
+      padding-bottom: rem-calc(20px);
+    }
+    .icon {
+      margin-top: rem-calc(85px);
     }
   }
 }

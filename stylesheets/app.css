@@ -3137,18 +3137,22 @@ a:hover {
   background-image: url(../icon/ac-icon-social-twitter.svg);
 }
 /* line 48, ../scss/components/_images-icons.scss */
+.icon.instagram {
+  background-image: url(../icon/ac-icon-social-instagram.svg);
+}
+/* line 51, ../scss/components/_images-icons.scss */
 .icon.small {
   width: 1.875rem;
   height: 1.875rem;
   background-size: 1.875rem 1.875rem;
 }
 
-/* line 55, ../scss/components/_images-icons.scss */
+/* line 58, ../scss/components/_images-icons.scss */
 img.avatar {
   width: 5rem;
   height: rem 5rem;
 }
-/* line 58, ../scss/components/_images-icons.scss */
+/* line 61, ../scss/components/_images-icons.scss */
 img.avatar.inactive {
   filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
   /* Firefox 10+, Firefox on Android */
@@ -3158,17 +3162,17 @@ img.avatar.inactive {
   /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 }
 
-/* line 67, ../scss/components/_images-icons.scss */
+/* line 70, ../scss/components/_images-icons.scss */
 .wedding-party-person {
   width: 19.125rem;
   height: 20.625rem;
   position: relative;
 }
-/* line 71, ../scss/components/_images-icons.scss */
+/* line 74, ../scss/components/_images-icons.scss */
 .wedding-party-person img {
   width: 100%;
 }
-/* line 74, ../scss/components/_images-icons.scss */
+/* line 77, ../scss/components/_images-icons.scss */
 .wedding-party-person .overlay {
   position: absolute;
   top: 0;
@@ -3188,7 +3192,7 @@ img.avatar.inactive {
   padding-top: 130px;
   overflow: hidden;
 }
-/* line 88, ../scss/components/_images-icons.scss */
+/* line 91, ../scss/components/_images-icons.scss */
 .wedding-party-person .overlay .text {
   position: relative;
   top: 9.375rem;
@@ -3197,23 +3201,23 @@ img.avatar.inactive {
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-/* line 93, ../scss/components/_images-icons.scss */
+/* line 96, ../scss/components/_images-icons.scss */
 .wedding-party-person .overlay span.name {
   display: block;
   margin-bottom: 0.625rem;
   color: #f6f6f6;
   font-size: 1.5rem;
 }
-/* line 99, ../scss/components/_images-icons.scss */
+/* line 102, ../scss/components/_images-icons.scss */
 .wedding-party-person .overlay span.title {
   color: #cccccc;
 }
-/* line 103, ../scss/components/_images-icons.scss */
+/* line 106, ../scss/components/_images-icons.scss */
 .wedding-party-person:hover .overlay {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 106, ../scss/components/_images-icons.scss */
+/* line 109, ../scss/components/_images-icons.scss */
 .wedding-party-person:hover .text {
   top: 0;
 }
@@ -3430,197 +3434,237 @@ select.selected:hover {
   bottom: 15%;
 }
 
-/* line 24, ../scss/components/_sections.scss */
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+  /* line 20, ../scss/components/_sections.scss */
+  .row.content {
+    min-height: 56.25rem;
+  }
+}
+/* line 30, ../scss/components/_sections.scss */
 .intro .title,
 .rsvp .title {
   padding: 1.875rem 0 1.25rem 0;
 }
-/* line 27, ../scss/components/_sections.scss */
+/* line 33, ../scss/components/_sections.scss */
 .intro .date,
 .rsvp .date {
   padding-bottom: 3.75rem;
 }
 
-/* line 34, ../scss/components/_sections.scss */
+/* line 40, ../scss/components/_sections.scss */
 .about-us-content {
   padding: 10%;
 }
-/* line 36, ../scss/components/_sections.scss */
+/* line 42, ../scss/components/_sections.scss */
 .about-us-content h2 {
   padding-bottom: 1.25rem;
 }
-/* line 39, ../scss/components/_sections.scss */
+/* line 45, ../scss/components/_sections.scss */
 .about-us-content h4 {
   padding: 1.25rem 0;
 }
-/* line 42, ../scss/components/_sections.scss */
+/* line 48, ../scss/components/_sections.scss */
 .about-us-content .avatar {
   cursor: pointer;
   padding-top: 1.875rem;
 }
-/* line 46, ../scss/components/_sections.scss */
+/* line 52, ../scss/components/_sections.scss */
 .about-us-content .andrew-avatar {
   text-align: right;
   padding-right: 0.3125rem;
 }
-/* line 50, ../scss/components/_sections.scss */
+/* line 56, ../scss/components/_sections.scss */
 .about-us-content .claudia-avatar {
   text-align: left;
   padding-left: 0.3125rem;
 }
-/* line 54, ../scss/components/_sections.scss */
+/* line 60, ../scss/components/_sections.scss */
 .about-us-content blockquote {
   cursor: pointer;
 }
-/* line 57, ../scss/components/_sections.scss */
+/* line 63, ../scss/components/_sections.scss */
 .about-us-content .row-content.quotes {
   padding-top: 3.75rem;
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 64, ../scss/components/_sections.scss */
+  /* line 70, ../scss/components/_sections.scss */
   .about-us-content .avatar {
     padding-bottom: 1.875rem;
   }
 }
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  /* line 72, ../scss/components/_sections.scss */
+  /* line 78, ../scss/components/_sections.scss */
   .about-us-content h2 {
     position: relative;
     top: 6.25rem;
     margin-top: -6.25rem;
   }
-  /* line 78, ../scss/components/_sections.scss */
+  /* line 84, ../scss/components/_sections.scss */
   .about-us-content .andrew-avatar,
   .about-us-content .andrew-text {
     text-align: left;
     padding-right: 10%;
   }
-  /* line 83, ../scss/components/_sections.scss */
+  /* line 89, ../scss/components/_sections.scss */
   .about-us-content .claudia-avatar,
   .about-us-content .claudia-text {
     text-align: right;
     padding-left: 10%;
   }
-  /* line 87, ../scss/components/_sections.scss */
+  /* line 93, ../scss/components/_sections.scss */
   .about-us-content .avatar {
     cursor: default;
     padding-top: 0;
   }
 }
-/* line 97, ../scss/components/_sections.scss */
+/* line 103, ../scss/components/_sections.scss */
 .wedding-details-content {
   padding: 10%;
 }
-/* line 99, ../scss/components/_sections.scss */
-.wedding-details-content h2 {
-  padding-bottom: 1.25rem;
-}
-/* line 102, ../scss/components/_sections.scss */
+/* line 105, ../scss/components/_sections.scss */
 .wedding-details-content .intro-text {
-  padding-bottom: 2.5rem;
+  padding-bottom: 3.125rem;
 }
 /* line 107, ../scss/components/_sections.scss */
+.wedding-details-content .intro-text h2 {
+  padding-bottom: 1.25rem;
+}
+/* line 110, ../scss/components/_sections.scss */
+.wedding-details-content .intro-text p.intro {
+  max-width: 55rem;
+  margin: 0 auto;
+}
+/* line 117, ../scss/components/_sections.scss */
 .wedding-details-content .ceremony,
 .wedding-details-content .reception,
 .wedding-details-content .cocktail {
   padding: 0 0.625rem;
+  max-width: 20rem;
+  margin: 0 auto;
 }
-/* line 109, ../scss/components/_sections.scss */
+/* line 121, ../scss/components/_sections.scss */
 .wedding-details-content .ceremony h4,
 .wedding-details-content .reception h4,
 .wedding-details-content .cocktail h4 {
-  padding: 1.25rem 0;
+  padding: 1.875rem 0 1.25rem 0;
 }
-/* line 112, ../scss/components/_sections.scss */
+/* line 124, ../scss/components/_sections.scss */
 .wedding-details-content .ceremony .button,
 .wedding-details-content .reception .button,
 .wedding-details-content .cocktail .button {
-  margin-top: 1.25rem;
+  margin-top: 0.625rem;
+  margin-bottom: 3.125rem;
+}
+/* line 128, ../scss/components/_sections.scss */
+.wedding-details-content .ceremony .icon,
+.wedding-details-content .reception .icon,
+.wedding-details-content .cocktail .icon {
+  margin-top: 1.5625rem;
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 122, ../scss/components/_sections.scss */
+  /* line 138, ../scss/components/_sections.scss */
   .ceremony p,
   .reception p,
   .cocktail p {
     padding: 0 10%;
   }
-  /* line 125, ../scss/components/_sections.scss */
-  .ceremony .button,
-  .reception .button,
-  .cocktail .button {
-    margin-bottom: 2.5rem;
+  /* line 141, ../scss/components/_sections.scss */
+  .ceremony .icon,
+  .reception .icon,
+  .cocktail .icon {
+    margin-top: 2.1875rem;
   }
 }
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  /* line 135, ../scss/components/_sections.scss */
+  /* line 151, ../scss/components/_sections.scss */
   .ceremony p,
   .reception p,
   .cocktail p {
     height: 9.375rem;
   }
+  /* line 154, ../scss/components/_sections.scss */
+  .ceremony .icon,
+  .reception .icon,
+  .cocktail .icon {
+    margin-top: 0;
+  }
 }
-/* line 143, ../scss/components/_sections.scss */
+/* line 162, ../scss/components/_sections.scss */
 .lodging-content {
   padding: 10%;
 }
-/* line 145, ../scss/components/_sections.scss */
+/* line 164, ../scss/components/_sections.scss */
 .lodging-content h2 {
   padding-bottom: 3.125rem;
 }
-/* line 149, ../scss/components/_sections.scss */
+/* line 168, ../scss/components/_sections.scss */
 .lodging-content .gunter,
 .lodging-content .courtyard {
   padding: 0 5%;
   text-align: center;
 }
-/* line 152, ../scss/components/_sections.scss */
+/* line 171, ../scss/components/_sections.scss */
 .lodging-content .gunter h5,
 .lodging-content .courtyard h5 {
   padding: 0.3125rem 0;
 }
-/* line 156, ../scss/components/_sections.scss */
+/* line 174, ../scss/components/_sections.scss */
+.lodging-content .gunter p.hotel-info,
+.lodging-content .courtyard p.hotel-info {
+  margin-bottom: 1.875rem;
+}
+/* line 178, ../scss/components/_sections.scss */
 .lodging-content .button {
-  margin-bottom: 3.125rem;
+  margin-top: 1.875rem;
+  margin-bottom: 4.375rem;
+}
+/* line 182, ../scss/components/_sections.scss */
+.lodging-content .courtyard .button {
+  margin-bottom: 0;
 }
 
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  /* line 164, ../scss/components/_sections.scss */
+  /* line 190, ../scss/components/_sections.scss */
   .lodging-content .gunter,
   .lodging-content .courtyard {
     text-align: left;
   }
-  /* line 166, ../scss/components/_sections.scss */
-  .lodging-content .gunter p,
-  .lodging-content .courtyard p {
-    height: 11.875rem;
+  /* line 192, ../scss/components/_sections.scss */
+  .lodging-content .gunter p.hotel-details,
+  .lodging-content .courtyard p.hotel-details {
+    height: 10rem;
+    margin-bottom: 0;
   }
-  /* line 170, ../scss/components/_sections.scss */
+  /* line 197, ../scss/components/_sections.scss */
   .lodging-content .button {
+    margin-top: 0;
     margin-bottom: 0;
   }
 }
-/* line 177, ../scss/components/_sections.scss */
+/* line 205, ../scss/components/_sections.scss */
 .in-between-content {
   padding: 5%;
 }
-/* line 179, ../scss/components/_sections.scss */
+/* line 207, ../scss/components/_sections.scss */
 .in-between-content h2 {
   padding-bottom: 1.25rem;
 }
-/* line 182, ../scss/components/_sections.scss */
+/* line 210, ../scss/components/_sections.scss */
 .in-between-content p.intro {
   padding-bottom: 1.875rem;
+  max-width: 55rem;
 }
-/* line 185, ../scss/components/_sections.scss */
+/* line 214, ../scss/components/_sections.scss */
 .in-between-content .double-border {
   border: 0.0625rem solid #f6f6f6;
   position: relative;
   padding: 5% 10%;
   margin: 0 auto;
+  text-align: left;
 }
-/* line 190, ../scss/components/_sections.scss */
+/* line 220, ../scss/components/_sections.scss */
 .in-between-content .double-border:before {
   content: " ";
   position: absolute;
@@ -3631,55 +3675,65 @@ select.selected:hover {
   bottom: 0.3125rem;
   border: 0.0625rem solid #f6f6f6;
 }
-/* line 200, ../scss/components/_sections.scss */
+/* line 230, ../scss/components/_sections.scss */
 .in-between-content .double-border li {
   text-align: left;
   color: #ffc189;
+  padding: 0.9375rem 0;
 }
 
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  /* line 208, ../scss/components/_sections.scss */
+  /* line 239, ../scss/components/_sections.scss */
   .in-between-content {
     padding: 10% 15%;
   }
-  /* line 210, ../scss/components/_sections.scss */
+  /* line 241, ../scss/components/_sections.scss */
   .in-between-content .double-border {
     width: 80%;
   }
 }
-/* line 217, ../scss/components/_sections.scss */
+/* line 248, ../scss/components/_sections.scss */
 .hear-from-you-content {
   padding: 10%;
 }
-/* line 219, ../scss/components/_sections.scss */
-.hear-from-you-content h2 {
-  padding-bottom: 1.25rem;
-}
-/* line 222, ../scss/components/_sections.scss */
+/* line 250, ../scss/components/_sections.scss */
 .hear-from-you-content a {
   color: black;
   text-decoration: none;
   border-bottom: 0;
 }
-/* line 228, ../scss/components/_sections.scss */
-.hear-from-you-content .twitter-content,
-.hear-from-you-content .mail-content {
-  padding-bottom: 3.125rem;
+/* line 254, ../scss/components/_sections.scss */
+.hear-from-you-content a:hover {
+  color: #ffc189;
+}
+/* line 258, ../scss/components/_sections.scss */
+.hear-from-you-content .icon {
+  margin-top: 4.6875rem;
+  margin-bottom: 1.25rem;
 }
 
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+  /* line 266, ../scss/components/_sections.scss */
+  .hear-from-you-content .icon {
+    margin-top: 5.3125rem;
+  }
+}
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  /* line 236, ../scss/components/_sections.scss */
-  .hear-from-you-content .twitter-content,
-  .hear-from-you-content .mail-content {
-    padding-bottom: 0;
+  /* line 274, ../scss/components/_sections.scss */
+  .hear-from-you-content h2 {
+    padding-bottom: 1.25rem;
+  }
+  /* line 277, ../scss/components/_sections.scss */
+  .hear-from-you-content .icon {
+    margin-top: 5.3125rem;
   }
 }
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 245, ../scss/components/_sections.scss */
+  /* line 286, ../scss/components/_sections.scss */
   .row.rsvp .row-content.with-background {
     top: 30%;
   }
-  /* line 248, ../scss/components/_sections.scss */
+  /* line 289, ../scss/components/_sections.scss */
   .row.rsvp .row-footer {
     bottom: 30%;
   }
