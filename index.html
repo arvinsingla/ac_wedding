@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AC Wedding</title>
     <link rel="stylesheet" href="stylesheets/app.css" />
-    <link rel="stylesheet" href="bower_components/ng-curtain/ng-curtain.css" />
+
     <script src="bower_components/modernizr/modernizr.js"></script>
   </head>
   <body>
 
-  <ctn-curtains>
 
-    <div class="row intro" ctn-curtain="intro">
+    <div class="row intro">
       <div class="small-12 medium-12 large-12 column">
         <img class="row-image" data-interchange="[images/bg-intro-mobile.jpg, (default)], [images/bg-intro-tablet.jpg, (medium)], [images/bg-intro.jpg, (large)]">
         <div class="row-content with-background text-center">
@@ -28,7 +27,7 @@
     </div>
 
     <!-- About us Details -->
-    <div class="row content about-us-content text-center" ctn-curtain="about-us">
+    <div class="row content about-us-content text-center">
       <div class="small-12 medium-12 large-12 column">
         <div class="row-content intro-text">
           <h2>A little about us</h2>
@@ -68,14 +67,14 @@
       </div>
     </div>
 
-    <div class="row intro wedding-details-intro" ctn-curtain="wedding-details-intro">
+    <div class="row intro wedding-details-intro">
       <div class="small-12 medium-12 large-12 column">
         <img class="row-image" src="images/bg-weddingdetails.jpg">
       </div>
     </div>
 
     <!-- Wedding Details -->
-    <div class="row content wedding-details-content text-center" ctn-curtain="wedding-details">
+    <div class="row content wedding-details-content text-center">
       <div class="small-12 medium-12 large-12 column">
         <div class="row-content intro-text">
           <h2>The lovely events of the day</h2>
@@ -113,14 +112,14 @@
       </div>
     </div>
 
-    <div class="row intro accomodations-intro" ctn-curtain="accomodations-intro">
+    <div class="row intro accomodations-intro">
       <div class="small-12 medium-12 large-12 column">
         <img class="row-image" src="images/bg-accomodations.jpg">
       </div>
     </div>
 
     <!-- Lodging -->
-    <div class="row content lodging-content" ctn-curtain="accomodations">
+    <div class="row content lodging-content">
       <div class="small-12 medium-12 large-12 column">
         <div class="row-content intro-text text-center">
           <h2>The Lodging Situation</h2>
@@ -150,14 +149,14 @@
       </div>
     </div>
 
-    <div class="row intro inbetween-intro" ctn-curtain="in-between-intro">
+    <div class="row intro inbetween-intro">
       <div class="small-12 medium-12 large-12 column">
         <img class="row-image" src="images/bg-inbetween.jpg">
       </div>
     </div>
 
     <!-- In-between festivities -->
-    <div class="row content in-between-content text-center" ctn-curtain="in-between">
+    <div class="row content in-between-content text-center">
       <div class="small-12 medium-12 large-12 column">
         <div class="row-content intro-text">
           <h2>What about in between the festivities?</h2>
@@ -180,14 +179,14 @@
       </div>
     </div>
 
-    <div class="row intro registry-intro" ctn-curtain="gitfs-registry-intro">
+    <div class="row intro registry-intro">
       <div class="small-12 medium-12 large-12 column">
         <img class="row-image" src="images/bg-registry.jpg">
       </div>
     </div>
 
     <!-- Gifts and Registry -->
-    <div class="row content gifts-registry-content" data-equalizer ctn-curtain="gitfs-registry">
+    <div class="row content gifts-registry-content" data-equalizer>
       <div class="small-12 medium-12 large-7 column">
         <div class="row-content registry-left" data-equalizer-watch>
           <h2>Gifts & Registry</h2>
@@ -211,20 +210,20 @@
       </div>
     </div>
 
-    <div class="row intro wedding-party-intro" ctn-curtain="wedding-party-intro">
+    <div class="row intro wedding-party-intro">
       <div class="small-12 medium-12 large-12 column">
         <img class="row-image" src="images/bg-weddingparty.jpg">
       </div>
     </div>
 
-    <div class="row intro hear-from-you-intro" ctn-curtain="hear-from-you-intro">
+    <div class="row intro hear-from-you-intro">
       <div class="small-12 medium-12 large-12 column">
         <img class="row-image" src="images/bg-hearfromyou.jpg">
       </div>
     </div>
 
     <!-- Contact Details -->
-    <div class="row content hear-from-you-content text-center" ctn-curtain="hear-from-you">
+    <div class="row content hear-from-you-content text-center">
       <div class="small-12 medium-12 large-12 column">
         <div class="row-content intro-text">
           <h2>We'd love to hear from you</h2>
@@ -256,7 +255,7 @@
       </div>
     </div>
 
-    <div class="row rsvp" ctn-curtain="rsvp">
+    <div class="row rsvp">
       <div class="small-12 medium-12 large-12 column">
         <img class="row-image" data-interchange="[images/bg-rsvp-mobile.jpg, (default)], [images/bg-rsvp-tablet.jpg, (medium)], [images/bg-rsvp.jpg, (large)]">
         <div class="row-content with-background text-center">
@@ -273,13 +272,9 @@
       </div>
     </div>
 
-  </ctn-curtains>
-
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
     <!-- <script src="bower_components/bower-skrollr/skrollr.js"></script> -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
-    <script src="bower_components/ng-curtain/ng-curtain.min.js"></script>
     <script src="js/app.js"></script>
     <script type="text/javascript" src="//use.typekit.net/bgq8iid.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
