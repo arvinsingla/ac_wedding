@@ -42,6 +42,12 @@ h4 {
   letter-spacing: 0.15rem;
 }
 
+@media #{$small-only} {
+  h4 {
+    font-size: 0.875rem;
+  }
+}
+
 p {
   letter-spacing: 0.020rem;
 }

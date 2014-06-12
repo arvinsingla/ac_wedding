@@ -37,7 +37,11 @@
     padding-bottom: rem-calc(20px);
   }
   h4 {
-    padding: rem-calc(10px) 0;
+    padding: rem-calc(20px) 0;
+  }
+  .avatar {
+    cursor: pointer;
+    padding-top: rem-calc(30px);
   }
   .andrew-avatar {
     text-align: right;
@@ -47,11 +51,19 @@
     text-align: left;
     padding-left: rem-calc(5px);
   }
-  .avatar {
-    cursor: pointer;
-  }
   blockquote {
     cursor: pointer;
+  }
+  .row-content.quotes {
+    padding-top: rem-calc(60px);
+  }
+}
+
+@media #{$medium-only} {
+  .about-us-content {
+    .avatar {
+      padding-bottom: rem-calc(30px);
+    }
   }
 }
 
@@ -74,6 +86,7 @@
     }
     .avatar {
       cursor: default;
+      padding-top: 0;
     }
   }
 }
