@@ -95,15 +95,14 @@ $(document).foundation();
 }(jQuery));
 
 
-/*
 // Angular JS Application
 (function() {
   angular.module('weddingApp', ['ngCurtain']);
 })();
 
-/*
 //var weddingApp = angular.module('weddingApp', ['ngCurtain']);
 
+/*
 nameApp.controller('NameCtrl', function ($scope){
   $scope.firstName = 'John';
 
