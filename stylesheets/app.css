@@ -3434,7 +3434,7 @@ select.selected:hover {
   bottom: 15%;
 }
 
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+@media only screen and (min-width: 64.063em) {
   /* line 20, ../scss/components/_sections.scss */
   .row.content {
     min-height: 56.25rem;
@@ -3493,7 +3493,7 @@ select.selected:hover {
     padding-bottom: 1.875rem;
   }
 }
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+@media only screen and (min-width: 64.063em) {
   /* line 78, ../scss/components/_sections.scss */
   .about-us-content h2 {
     position: relative;
@@ -3577,7 +3577,7 @@ select.selected:hover {
     margin-top: 2.1875rem;
   }
 }
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+@media only screen and (min-width: 64.063em) {
   /* line 151, ../scss/components/_sections.scss */
   .ceremony p,
   .reception p,
@@ -3625,7 +3625,7 @@ select.selected:hover {
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+@media only screen and (min-width: 64.063em) {
   /* line 190, ../scss/components/_sections.scss */
   .lodging-content .gunter,
   .lodging-content .courtyard {
@@ -3682,7 +3682,7 @@ select.selected:hover {
   padding: 0.9375rem 0;
 }
 
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+@media only screen and (min-width: 64.063em) {
   /* line 239, ../scss/components/_sections.scss */
   .in-between-content {
     padding: 10% 15%;
@@ -3760,7 +3760,7 @@ select.selected:hover {
     padding: 3.75rem;
   }
 }
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+@media only screen and (min-width: 64.063em) {
   /* line 307, ../scss/components/_sections.scss */
   .gifts-registry-content .registry-separator {
     right: -0.9375rem;
@@ -3802,7 +3802,7 @@ select.selected:hover {
     margin-top: 5.3125rem;
   }
 }
-@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+@media only screen and (min-width: 64.063em) {
   /* line 348, ../scss/components/_sections.scss */
   .hear-from-you-content h2 {
     padding-bottom: 1.25rem;

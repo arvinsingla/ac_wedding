@@ -16,7 +16,7 @@
   }
 }
 
-@media #{$large-only} {
+@media #{$large-up} {
   .row.content {
     min-height: rem-calc(900px);
   }
@@ -73,7 +73,7 @@
   }
 }
 
-@media #{$large-only} {
+@media #{$large-up} {
   .about-us-content {
     h2 {
       position: relative;
@@ -144,7 +144,7 @@
   }
 }
 
-@media #{$large-only} {
+@media #{$large-up} {
   .ceremony,
   .reception,
   .cocktail {
@@ -184,7 +184,7 @@
   }
 }
 
-@media #{$large-only} {
+@media #{$large-up} {
   .lodging-content {
     .gunter,
     .courtyard {
@@ -235,7 +235,7 @@
   }
 }
 
-@media #{$large-only} {
+@media #{$large-up} {
   .in-between-content {
     padding: 10% 15%;
     .double-border {
@@ -302,7 +302,7 @@
   }
 }
 
-@media #{$large-only} {
+@media #{$large-up} {
   .gifts-registry-content {
     .registry-separator {
       right: rem-calc(-15px);
@@ -343,7 +343,7 @@
   }
 }
 
-@media #{$large-only} {
+@media #{$large-up} {
   .hear-from-you-content {
     h2 {
       padding-bottom: rem-calc(20px);
