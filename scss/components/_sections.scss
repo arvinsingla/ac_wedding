@@ -244,6 +244,80 @@
   }
 }
 
+// Gift and Registry
+.gifts-registry-content {
+  img {
+    width: rem-calc(300px);
+  }
+  .column {
+    position: relative;
+  }
+  .row-content {
+    padding: rem-calc(60px) rem-calc(20px);
+  }
+  .registry-left {
+    background-color: $light-grey-color;
+    border: 1px solid $light-grey-color;
+    text-align: center;
+    h2 {
+      padding-bottom: rem-calc(20px);
+    }
+    p {
+      text-align: left;
+    }
+    .button {
+      margin-top: rem-calc(30px);
+    }
+  }
+  .registry-right {
+    border: 1px solid $light-grey-color;
+    text-align: center;
+  }
+
+  .registry-separator {
+    width: rem-calc(30px);
+    height: rem-calc(30px);
+    @include border-radius(rem-calc(30px));
+    background-color: $peach-color;
+    color: $white-color;
+    font-size: rem-calc(12px);
+    text-transform: uppercase;
+    line-height: rem-calc(32px);
+    font-family: $secondary-font-family;
+    font-weight: bold;
+    position: absolute;
+    bottom: rem-calc(-15px);
+    right: 48%;
+    z-index: 99;
+    text-align: center;
+  }
+}
+
+@media #{$medium-up} {
+  .gifts-registry-content {
+    .row-content {
+      padding: rem-calc(60px);
+    }
+  }
+}
+
+@media #{$large-only} {
+  .gifts-registry-content {
+    padding: rem-calc(20px);
+    .registry-separator {
+      right: rem-calc(-15px);
+      top: 46%;
+    }
+    .registry-left {
+      padding-left: 20%;
+    }
+    .registry-right {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
+
 // Love to hear from you
 .hear-from-you-content {
   padding: 10%;

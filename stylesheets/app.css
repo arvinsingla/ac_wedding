@@ -3692,48 +3692,132 @@ select.selected:hover {
     width: 80%;
   }
 }
-/* line 248, ../scss/components/_sections.scss */
+/* line 249, ../scss/components/_sections.scss */
+.gifts-registry-content img {
+  width: 18.75rem;
+}
+/* line 252, ../scss/components/_sections.scss */
+.gifts-registry-content .column {
+  position: relative;
+}
+/* line 255, ../scss/components/_sections.scss */
+.gifts-registry-content .row-content {
+  padding: 3.75rem 1.25rem;
+}
+/* line 258, ../scss/components/_sections.scss */
+.gifts-registry-content .registry-left {
+  background-color: #f6f6f6;
+  border: 1px solid #f6f6f6;
+  text-align: center;
+}
+/* line 262, ../scss/components/_sections.scss */
+.gifts-registry-content .registry-left h2 {
+  padding-bottom: 1.25rem;
+}
+/* line 265, ../scss/components/_sections.scss */
+.gifts-registry-content .registry-left p {
+  text-align: left;
+}
+/* line 268, ../scss/components/_sections.scss */
+.gifts-registry-content .registry-left .button {
+  margin-top: 1.875rem;
+}
+/* line 272, ../scss/components/_sections.scss */
+.gifts-registry-content .registry-right {
+  border: 1px solid #f6f6f6;
+  text-align: center;
+}
+/* line 277, ../scss/components/_sections.scss */
+.gifts-registry-content .registry-separator {
+  width: 1.875rem;
+  height: 1.875rem;
+  -webkit-border-radius: 1.875rem;
+  -moz-border-radius: 1.875rem;
+  -ms-border-radius: 1.875rem;
+  -o-border-radius: 1.875rem;
+  border-radius: 1.875rem;
+  background-color: #ffc189;
+  color: white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  line-height: 2rem;
+  font-family: "proxima-nova", sans-serif;
+  font-weight: bold;
+  position: absolute;
+  bottom: -0.9375rem;
+  right: 48%;
+  z-index: 99;
+  text-align: center;
+}
+
+@media only screen and (min-width: 40.063em) {
+  /* line 298, ../scss/components/_sections.scss */
+  .gifts-registry-content .row-content {
+    padding: 3.75rem;
+  }
+}
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+  /* line 305, ../scss/components/_sections.scss */
+  .gifts-registry-content {
+    padding: 1.25rem;
+  }
+  /* line 307, ../scss/components/_sections.scss */
+  .gifts-registry-content .registry-separator {
+    right: -0.9375rem;
+    top: 46%;
+  }
+  /* line 311, ../scss/components/_sections.scss */
+  .gifts-registry-content .registry-left {
+    padding-left: 20%;
+  }
+  /* line 314, ../scss/components/_sections.scss */
+  .gifts-registry-content .registry-right {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+/* line 322, ../scss/components/_sections.scss */
 .hear-from-you-content {
   padding: 10%;
 }
-/* line 250, ../scss/components/_sections.scss */
+/* line 324, ../scss/components/_sections.scss */
 .hear-from-you-content a {
   color: black;
   text-decoration: none;
   border-bottom: 0;
 }
-/* line 254, ../scss/components/_sections.scss */
+/* line 328, ../scss/components/_sections.scss */
 .hear-from-you-content a:hover {
   color: #ffc189;
 }
-/* line 258, ../scss/components/_sections.scss */
+/* line 332, ../scss/components/_sections.scss */
 .hear-from-you-content .icon {
   margin-top: 4.6875rem;
   margin-bottom: 1.25rem;
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 266, ../scss/components/_sections.scss */
+  /* line 340, ../scss/components/_sections.scss */
   .hear-from-you-content .icon {
     margin-top: 5.3125rem;
   }
 }
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  /* line 274, ../scss/components/_sections.scss */
+  /* line 348, ../scss/components/_sections.scss */
   .hear-from-you-content h2 {
     padding-bottom: 1.25rem;
   }
-  /* line 277, ../scss/components/_sections.scss */
+  /* line 351, ../scss/components/_sections.scss */
   .hear-from-you-content .icon {
     margin-top: 5.3125rem;
   }
 }
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 286, ../scss/components/_sections.scss */
+  /* line 360, ../scss/components/_sections.scss */
   .row.rsvp .row-content.with-background {
     top: 30%;
   }
-  /* line 289, ../scss/components/_sections.scss */
+  /* line 363, ../scss/components/_sections.scss */
   .row.rsvp .row-footer {
     bottom: 30%;
   }

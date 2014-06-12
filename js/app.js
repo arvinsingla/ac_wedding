@@ -47,7 +47,7 @@ $(document).foundation();
   quotes.sort(function() { return 0.5 - Math.random() });
   var quotePosition = 0;
   $('.about-us-content blockquote').html(quotes[quotePosition]).click(function() {
-    if (quotePosition == quotes.length) {
+    if (quotePosition == ((quotes.length) - 1)) {
       quotePosition = 0;
     } else {
       quotePosition++;
