@@ -3751,16 +3751,16 @@ select.selected:hover {
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 298, ../scss/components/_sections.scss */
+  /* line 297, ../scss/components/_sections.scss */
+  .gifts-registry-content {
+    padding: 1.25rem;
+  }
+  /* line 299, ../scss/components/_sections.scss */
   .gifts-registry-content .row-content {
     padding: 3.75rem;
   }
 }
 @media only screen and (min-width: 64.063em) and (max-width: 90em) {
-  /* line 305, ../scss/components/_sections.scss */
-  .gifts-registry-content {
-    padding: 1.25rem;
-  }
   /* line 307, ../scss/components/_sections.scss */
   .gifts-registry-content .registry-separator {
     right: -0.9375rem;

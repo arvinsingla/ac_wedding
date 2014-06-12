@@ -295,6 +295,7 @@
 
 @media #{$medium-up} {
   .gifts-registry-content {
+    padding: rem-calc(20px);
     .row-content {
       padding: rem-calc(60px);
     }
@@ -303,7 +304,6 @@
 
 @media #{$large-only} {
   .gifts-registry-content {
-    padding: rem-calc(20px);
     .registry-separator {
       right: rem-calc(-15px);
       top: 46%;
