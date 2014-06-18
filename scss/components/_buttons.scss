@@ -6,6 +6,7 @@
   background: $charcoal-color;
   border-color: $charcoal-color;
   overflow: hidden;
+  z-index: 1000;
   @include user-select(none);
   @include element-text(center);
   &:hover {

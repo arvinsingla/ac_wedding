@@ -2872,6 +2872,7 @@ th.hide-for-touch {
   background: #333333;
   border-color: #333333;
   overflow: hidden;
+  z-index: 1000;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -2883,93 +2884,257 @@ th.hide-for-touch {
   line-height: normal;
   text-align: center;
 }
-/* line 11, ../scss/components/_buttons.scss */
+/* line 12, ../scss/components/_buttons.scss */
 .button:hover {
   background: #ffc189;
   border-color: #ffc189;
 }
-/* line 14, ../scss/components/_buttons.scss */
+/* line 15, ../scss/components/_buttons.scss */
 .button:hover span {
   color: #ffc189;
 }
-/* line 17, ../scss/components/_buttons.scss */
+/* line 18, ../scss/components/_buttons.scss */
 .button:hover span + span {
   top: 16px;
   color: white;
   opacity: 1;
 }
-/* line 23, ../scss/components/_buttons.scss */
+/* line 24, ../scss/components/_buttons.scss */
 .button.wide {
   width: 22.5rem;
 }
-/* line 27, ../scss/components/_buttons.scss */
+/* line 28, ../scss/components/_buttons.scss */
 .button.secondary {
   background: white;
   color: #ffc189;
   border-color: #ffc189;
 }
-/* line 31, ../scss/components/_buttons.scss */
+/* line 32, ../scss/components/_buttons.scss */
 .button.secondary:hover {
   background: #ffc189;
   color: white;
   border-color: #ffc189;
 }
-/* line 38, ../scss/components/_buttons.scss */
+/* line 39, ../scss/components/_buttons.scss */
 .button.tertiary {
   background: white;
   color: #cccccc;
   border-color: #cccccc;
 }
-/* line 42, ../scss/components/_buttons.scss */
+/* line 43, ../scss/components/_buttons.scss */
 .button.tertiary:hover {
   background: #cccccc;
   color: white;
   border-color: #cccccc;
 }
-/* line 47, ../scss/components/_buttons.scss */
+/* line 48, ../scss/components/_buttons.scss */
 .button.tertiary:hover span {
   color: #cccccc;
 }
-/* line 50, ../scss/components/_buttons.scss */
+/* line 51, ../scss/components/_buttons.scss */
 .button.tertiary:hover span + span {
   color: white;
 }
-/* line 56, ../scss/components/_buttons.scss */
+/* line 57, ../scss/components/_buttons.scss */
 .button.quaternary {
   background: none;
   color: white;
   border-color: white;
 }
-/* line 60, ../scss/components/_buttons.scss */
+/* line 61, ../scss/components/_buttons.scss */
 .button.quaternary:hover {
   background: #333333;
   color: white;
   border-color: #333333;
 }
-/* line 65, ../scss/components/_buttons.scss */
+/* line 66, ../scss/components/_buttons.scss */
 .button.quaternary:hover span {
   color: #cccccc;
   opacity: 0;
 }
-/* line 69, ../scss/components/_buttons.scss */
+/* line 70, ../scss/components/_buttons.scss */
 .button.quaternary:hover span + span {
   color: white;
   opacity: 1;
 }
-/* line 76, ../scss/components/_buttons.scss */
+/* line 77, ../scss/components/_buttons.scss */
 .button span {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 80, ../scss/components/_buttons.scss */
+/* line 81, ../scss/components/_buttons.scss */
 .button > span + span {
   position: absolute;
   left: 0;
   right: 0;
   top: 100%;
   opacity: 0;
+}
+
+/* Common styles for overlay and modal type (fixed morph) */
+/* line 4, ../scss/components/_modal.scss */
+.morph-button-fixed,
+.morph-button-fixed .morph-content {
+  width: 360px;
+  height: 50px;
+}
+
+/* line 9, ../scss/components/_modal.scss */
+.morph-button-fixed > button {
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 0.1s 0.5s;
+  transition: opacity 0.1s 0.5s;
+}
+
+/* line 17, ../scss/components/_modal.scss */
+.morph-button-fixed.open > .button {
+  opacity: 0;
+  -webkit-transition: opacity 0.1s;
+  transition: opacity 0.1s;
+}
+
+/* line 23, ../scss/components/_modal.scss */
+.morph-button-fixed .morph-content {
+  position: fixed;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+  transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+}
+
+/* line 30, ../scss/components/_modal.scss */
+.morph-button-fixed.open .morph-content {
+  opacity: 1;
+}
+
+/* line 34, ../scss/components/_modal.scss */
+.morph-button-fixed .morph-content > div {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+  transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+}
+
+/* line 42, ../scss/components/_modal.scss */
+.morph-button-fixed.open .morph-content > div {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s 0.5s;
+  transition: opacity 0.3s 0.5s;
+}
+
+/* line 50, ../scss/components/_modal.scss */
+.morph-button-fixed.active > .button {
+  z-index: 2000;
+}
+
+/* line 54, ../scss/components/_modal.scss */
+.morph-button-fixed.active .morph-content {
+  z-index: 1900;
+}
+
+/* Transitions for overlay button and sidebar button */
+/* line 60, ../scss/components/_modal.scss */
+.morph-button-overlay .morph-content,
+.morph-button-sidebar .morph-content {
+  -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+  transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+}
+
+/* line 66, ../scss/components/_modal.scss */
+.morph-button-overlay.open .morph-content,
+.morph-button-sidebar.open .morph-content {
+  -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+  transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
+}
+
+/* Morph Button Style: Overlay */
+/* line 72, ../scss/components/_modal.scss */
+.morph-button.morph-button-overlay {
+  margin: 50px auto;
+}
+
+/* line 76, ../scss/components/_modal.scss */
+.morph-button-overlay .morph-content {
+  overflow: hidden;
+  background: white;
+}
+
+/* line 81, ../scss/components/_modal.scss */
+.morph-button-overlay.open .morph-content {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100%;
+  height: 100%;
+}
+
+/* Morph Button Style: Modal */
+/* line 89, ../scss/components/_modal.scss */
+.morph-button-modal::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 800;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  content: '';
+  opacity: 0;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  pointer-events: none;
+}
+
+/* line 104, ../scss/components/_modal.scss */
+.morph-button-modal.open::before {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* line 109, ../scss/components/_modal.scss */
+.morph-button-modal.active::before {
+  z-index: 1800;
+}
+
+/* line 113, ../scss/components/_modal.scss */
+.morph-button-modal .morph-content {
+  overflow: hidden;
+  -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+  transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+}
+
+/* line 119, ../scss/components/_modal.scss */
+.morph-button-modal.open .morph-content {
+  top: 50% !important;
+  left: 50% !important;
+  margin: -210px 0 0 -300px;
+  width: 600px;
+  height: 420px;
+  -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+  transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+}
+
+/* line 130, ../scss/components/_modal.scss */
+.icon-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* line 136, ../scss/components/_modal.scss */
+.icon-close:hover {
+  color: #a50a05;
+}
+
+/* Helper classes */
+/* line 141, ../scss/components/_modal.scss */
+.noscroll {
+  overflow: hidden;
 }
 
 /* line 3, ../scss/components/_typography.scss */

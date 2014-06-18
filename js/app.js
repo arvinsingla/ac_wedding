@@ -17,7 +17,18 @@ $(document).foundation();
       //Debugging - Log the current scroll position.
     }
   });
-  */
+
+*/
+  $('.button').click(function(e) {
+    e.preventDefault();
+    var pos = $(this).position();
+    var $parent = $(this).parents('.modal-container');
+    var $modalContent = $parent.find('.modal-content');
+    $modalContent.css('left', pos.left);
+    $modalContent.css('top', pos.top);
+    //$parent.toggleClass('open');
+  });
+
 
   // Allow avatars to swap out text on mobile form factors
   if (!matchMedia(Foundation.media_queries['large']).matches) {
@@ -95,11 +106,83 @@ $(document).foundation();
 }(jQuery));
 
 
+(function() {
+  var docElem = window.document.documentElement, didScroll, scrollPosition;
+
+  // trick to prevent scrolling when opening/closing button
+  function noScrollFn() {
+    window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+    console.log("noScroll");
+  }
+
+  function noScroll() {
+    window.removeEventListener( 'scroll', scrollHandler );
+    window.addEventListener( 'scroll', noScrollFn );
+  }
+
+  function scrollFn() {
+    window.addEventListener( 'scroll', scrollHandler );
+  }
+
+  function canScroll() {
+    window.removeEventListener( 'scroll', noScrollFn );
+    scrollFn();
+  }
+
+  function scrollHandler() {
+    if( !didScroll ) {
+      didScroll = true;
+      setTimeout( function() { scrollPage(); }, 60 );
+    }
+    console.log("scrollHandler");
+  };
+
+  function scrollPage() {
+    scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+    didScroll = false;
+  };
+
+  scrollFn();
+
+  var el = document.querySelector( '.morph-button' );
+
+  new UIMorphingButton( el, {
+    closeEl : '.icon-close',
+    onBeforeOpen : function() {
+      // don't allow to scroll
+      noScroll();
+    },
+    onAfterOpen : function() {
+      // can scroll again
+      canScroll();
+      // add class "noscroll" to body
+      classie.addClass( document.body, 'noscroll' );
+      // add scroll class to main el
+      classie.addClass( el, 'scroll' );
+    },
+    onBeforeClose : function() {
+      // remove class "noscroll" to body
+      classie.removeClass( document.body, 'noscroll' );
+      // remove scroll class from main el
+      classie.removeClass( el, 'scroll' );
+      // don't allow to scroll
+      noScroll();
+    },
+    onAfterClose : function() {
+      // can scroll again
+      canScroll();
+    }
+  } );
+})();
+
+/*
 // Angular JS Application
 (function() {
   angular.module('weddingApp', ['ngCurtain']);
 })();
 
+
+*/
 //var weddingApp = angular.module('weddingApp', ['ngCurtain']);
 
 /*
