@@ -2872,7 +2872,7 @@ th.hide-for-touch {
   background: #333333;
   border-color: #333333;
   overflow: hidden;
-  z-index: 1000;
+  z-index: 999;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
@@ -2973,168 +2973,15 @@ th.hide-for-touch {
   opacity: 0;
 }
 
-/* Common styles for overlay and modal type (fixed morph) */
-/* line 4, ../scss/components/_modal.scss */
-.morph-button-fixed,
-.morph-button-fixed .morph-content {
-  width: 360px;
-  height: 50px;
-}
-
-/* line 9, ../scss/components/_modal.scss */
-.morph-button-fixed > button {
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: opacity 0.1s 0.5s;
-  transition: opacity 0.1s 0.5s;
-}
-
-/* line 17, ../scss/components/_modal.scss */
-.morph-button-fixed.open > .button {
-  opacity: 0;
-  -webkit-transition: opacity 0.1s;
-  transition: opacity 0.1s;
-}
-
-/* line 23, ../scss/components/_modal.scss */
-.morph-button-fixed .morph-content {
-  position: fixed;
-  opacity: 0;
-  -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-  transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-}
-
-/* line 30, ../scss/components/_modal.scss */
-.morph-button-fixed.open .morph-content {
-  opacity: 1;
-}
-
-/* line 34, ../scss/components/_modal.scss */
-.morph-button-fixed .morph-content > div {
-  visibility: hidden;
-  height: 0;
-  opacity: 0;
-  -webkit-transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
-  transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
-}
-
-/* line 42, ../scss/components/_modal.scss */
-.morph-button-fixed.open .morph-content > div {
-  visibility: visible;
-  height: auto;
-  opacity: 1;
-  -webkit-transition: opacity 0.3s 0.5s;
-  transition: opacity 0.3s 0.5s;
-}
-
-/* line 50, ../scss/components/_modal.scss */
-.morph-button-fixed.active > .button {
-  z-index: 2000;
-}
-
-/* line 54, ../scss/components/_modal.scss */
-.morph-button-fixed.active .morph-content {
-  z-index: 1900;
-}
-
-/* Transitions for overlay button and sidebar button */
-/* line 60, ../scss/components/_modal.scss */
-.morph-button-overlay .morph-content,
-.morph-button-sidebar .morph-content {
-  -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
-  transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
-}
-
-/* line 66, ../scss/components/_modal.scss */
-.morph-button-overlay.open .morph-content,
-.morph-button-sidebar.open .morph-content {
-  -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
-  transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
-}
-
-/* Morph Button Style: Overlay */
-/* line 72, ../scss/components/_modal.scss */
-.morph-button.morph-button-overlay {
-  margin: 50px auto;
-}
-
-/* line 76, ../scss/components/_modal.scss */
-.morph-button-overlay .morph-content {
-  overflow: hidden;
-  background: white;
-}
-
-/* line 81, ../scss/components/_modal.scss */
-.morph-button-overlay.open .morph-content {
-  top: 0 !important;
-  left: 0 !important;
-  width: 100%;
-  height: 100%;
-}
-
-/* Morph Button Style: Modal */
-/* line 89, ../scss/components/_modal.scss */
-.morph-button-modal::before {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 800;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  content: '';
-  opacity: 0;
-  -webkit-transition: opacity 0.5s;
-  transition: opacity 0.5s;
-  pointer-events: none;
-}
-
-/* line 104, ../scss/components/_modal.scss */
-.morph-button-modal.open::before {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* line 109, ../scss/components/_modal.scss */
-.morph-button-modal.active::before {
-  z-index: 1800;
-}
-
-/* line 113, ../scss/components/_modal.scss */
-.morph-button-modal .morph-content {
-  overflow: hidden;
-  -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-  transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-}
-
-/* line 119, ../scss/components/_modal.scss */
-.morph-button-modal.open .morph-content {
-  top: 50% !important;
-  left: 50% !important;
-  margin: -210px 0 0 -300px;
-  width: 600px;
-  height: 420px;
-  -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-  transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-}
-
-/* line 130, ../scss/components/_modal.scss */
-.icon-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-/* line 136, ../scss/components/_modal.scss */
-.icon-close:hover {
-  color: #a50a05;
-}
-
-/* Helper classes */
-/* line 141, ../scss/components/_modal.scss */
-.noscroll {
-  overflow: hidden;
+/* line 90, ../scss/components/_buttons.scss */
+input[type="submit"] {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #333333;
+  color: white;
 }
 
 /* line 3, ../scss/components/_typography.scss */
@@ -3306,18 +3153,22 @@ a:hover {
   background-image: url(../icon/ac-icon-social-instagram.svg);
 }
 /* line 51, ../scss/components/_images-icons.scss */
+.icon.close {
+  background-image: url(../icon/ac-icon-close.svg);
+}
+/* line 54, ../scss/components/_images-icons.scss */
 .icon.small {
   width: 1.875rem;
   height: 1.875rem;
   background-size: 1.875rem 1.875rem;
 }
 
-/* line 58, ../scss/components/_images-icons.scss */
+/* line 61, ../scss/components/_images-icons.scss */
 img.avatar {
   width: 5rem;
   height: rem 5rem;
 }
-/* line 61, ../scss/components/_images-icons.scss */
+/* line 64, ../scss/components/_images-icons.scss */
 img.avatar.inactive {
   filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
   /* Firefox 10+, Firefox on Android */
@@ -3327,17 +3178,17 @@ img.avatar.inactive {
   /* Chrome 19+, Safari 6+, Safari 6+ iOS */
 }
 
-/* line 70, ../scss/components/_images-icons.scss */
+/* line 73, ../scss/components/_images-icons.scss */
 .wedding-party-person {
   width: 19.125rem;
   height: 20.625rem;
   position: relative;
 }
-/* line 74, ../scss/components/_images-icons.scss */
+/* line 77, ../scss/components/_images-icons.scss */
 .wedding-party-person img {
   width: 100%;
 }
-/* line 77, ../scss/components/_images-icons.scss */
+/* line 80, ../scss/components/_images-icons.scss */
 .wedding-party-person .overlay {
   position: absolute;
   top: 0;
@@ -3357,7 +3208,7 @@ img.avatar.inactive {
   padding-top: 130px;
   overflow: hidden;
 }
-/* line 91, ../scss/components/_images-icons.scss */
+/* line 94, ../scss/components/_images-icons.scss */
 .wedding-party-person .overlay .text {
   position: relative;
   top: 9.375rem;
@@ -3366,23 +3217,23 @@ img.avatar.inactive {
   -o-transition: all 0.4s;
   transition: all 0.4s;
 }
-/* line 96, ../scss/components/_images-icons.scss */
+/* line 99, ../scss/components/_images-icons.scss */
 .wedding-party-person .overlay span.name {
   display: block;
   margin-bottom: 0.625rem;
   color: #f6f6f6;
   font-size: 1.5rem;
 }
-/* line 102, ../scss/components/_images-icons.scss */
+/* line 105, ../scss/components/_images-icons.scss */
 .wedding-party-person .overlay span.title {
   color: #cccccc;
 }
-/* line 106, ../scss/components/_images-icons.scss */
+/* line 109, ../scss/components/_images-icons.scss */
 .wedding-party-person:hover .overlay {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
 }
-/* line 109, ../scss/components/_images-icons.scss */
+/* line 112, ../scss/components/_images-icons.scss */
 .wedding-party-person:hover .text {
   top: 0;
 }
@@ -3483,27 +3334,27 @@ input.error::-webkit-input-placeholder {
 /* line 55, ../scss/components/_forms.scss */
 .radio-group {
   margin: 1.25rem 0;
+  display: inline-block;
 }
-/* line 57, ../scss/components/_forms.scss */
+/* line 58, ../scss/components/_forms.scss */
 .radio-group input {
   display: none;
 }
-/* line 59, ../scss/components/_forms.scss */
+/* line 60, ../scss/components/_forms.scss */
 .radio-group input[type="radio"]:checked + label {
   background-color: #ffc189;
   color: white;
   border-color: #ffc189;
 }
-/* line 66, ../scss/components/_forms.scss */
+/* line 67, ../scss/components/_forms.scss */
 .radio-group.selected label {
   border: 1px solid #ffc189;
 }
-/* line 70, ../scss/components/_forms.scss */
+/* line 71, ../scss/components/_forms.scss */
 .radio-group label {
-  min-width: 12.5rem;
+  width: 7.8125rem;
   padding: 1rem 0;
   border: 1px solid #cccccc;
-  position: relative;
   float: left;
   text-transform: uppercase;
   font-family: "proxima-nova", sans-serif;
@@ -3541,7 +3392,13 @@ input.error::-webkit-input-placeholder {
   border-bottom-right-radius: 5px;
 }
 
-/* line 93, ../scss/components/_forms.scss */
+@media only screen and (min-width: 40.063em) {
+  /* line 95, ../scss/components/_forms.scss */
+  .radio-group label {
+    width: 12.5rem;
+  }
+}
+/* line 101, ../scss/components/_forms.scss */
 select {
   width: 25rem;
   padding: 1rem 1.875rem;
@@ -3564,15 +3421,15 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-/* line 108, ../scss/components/_forms.scss */
+/* line 116, ../scss/components/_forms.scss */
 select:hover {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTcuOSA3NS42IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1Ny45IDc1LjYiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iIzMzMzMzMyIgZD0iTTI0LjQsNC41djU1LjhMNy43LDQzLjVjLTEuOC0xLjgtNC42LTEuOC02LjQsMGMtMS44LDEuOC0xLjgsNC42LDAsNi40bDI0LjQsMjQuNGMwLjgsMC44LDIsMS4zLDMuMiwxLjMNCglzMi4zLTAuNSwzLjItMS4zbDI0LjQtMjQuNGMwLjktMC45LDEuMy0yLDEuMy0zLjJzLTAuNC0yLjMtMS4zLTMuMmMtMS44LTEuOC00LjYtMS44LTYuNCwwTDMzLjQsNjAuM1Y0LjVjMC0yLjUtMi00LjUtNC41LTQuNQ0KCUMyNi40LDAsMjQuNCwyLDI0LjQsNC41eiIvPg0KPC9zdmc+DQo=);
 }
-/* line 111, ../scss/components/_forms.scss */
+/* line 119, ../scss/components/_forms.scss */
 select.selected {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTcuOSA3NS42IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1Ny45IDc1LjYiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGQzE4OSIgZD0iTTI0LjQsNC41djU1LjhMNy43LDQzLjVjLTEuOC0xLjgtNC42LTEuOC02LjQsMGMtMS44LDEuOC0xLjgsNC42LDAsNi40bDI0LjQsMjQuNGMwLjgsMC44LDIsMS4zLDMuMiwxLjMNCglzMi4zLTAuNSwzLjItMS4zbDI0LjQtMjQuNGMwLjktMC45LDEuMy0yLDEuMy0zLjJzLTAuNC0yLjMtMS4zLTMuMmMtMS44LTEuOC00LjYtMS44LTYuNCwwTDMzLjQsNjAuM1Y0LjVjMC0yLjUtMi00LjUtNC41LTQuNQ0KCUMyNi40LDAsMjQuNCwyLDI0LjQsNC41eiIvPg0KPC9zdmc+DQo=);
 }
-/* line 113, ../scss/components/_forms.scss */
+/* line 121, ../scss/components/_forms.scss */
 select.selected:hover {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTcuOSA3NS42IiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1Ny45IDc1LjYiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHBhdGggZmlsbD0iI0ZGQzE4OSIgZD0iTTI0LjQsNC41djU1LjhMNy43LDQzLjVjLTEuOC0xLjgtNC42LTEuOC02LjQsMGMtMS44LDEuOC0xLjgsNC42LDAsNi40bDI0LjQsMjQuNGMwLjgsMC44LDIsMS4zLDMuMiwxLjMNCglzMi4zLTAuNSwzLjItMS4zbDI0LjQtMjQuNGMwLjktMC45LDEuMy0yLDEuMy0zLjJzLTAuNC0yLjMtMS4zLTMuMmMtMS44LTEuOC00LjYtMS44LTYuNCwwTDMzLjQsNjAuM1Y0LjVjMC0yLjUtMi00LjUtNC41LTQuNQ0KCUMyNi40LDAsMjQuNCwyLDI0LjQsNC41eiIvPg0KPC9zdmc+DQo=);
 }
@@ -3985,6 +3842,104 @@ select.selected:hover {
   /* line 363, ../scss/components/_sections.scss */
   .row.rsvp .row-footer {
     bottom: 30%;
+  }
+}
+/* line 1, ../scss/components/_modal.scss */
+.locked {
+  overflow: hidden;
+}
+
+/* line 5, ../scss/components/_modal.scss */
+.modal {
+  opacity: 0;
+  overflow: hidden;
+  background-color: white;
+  -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+  transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+  position: fixed;
+  width: 22.5rem;
+  height: 3.125rem;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 15, ../scss/components/_modal.scss */
+.modal.open {
+  top: 0 !important;
+  left: 0 !important;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 1000;
+  overflow: scroll;
+  -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+  transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
+}
+/* line 25, ../scss/components/_modal.scss */
+.modal.open > div {
+  visibility: visible;
+  height: auto;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s 0.5s;
+  transition: opacity 0.3s 0.5s;
+}
+/* line 33, ../scss/components/_modal.scss */
+.modal > div {
+  visibility: hidden;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+  transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+}
+/* line 40, ../scss/components/_modal.scss */
+.modal form {
+  display: inline-block;
+  margin: 0 auto;
+}
+/* line 44, ../scss/components/_modal.scss */
+.modal .text-group {
+  text-align: left;
+}
+/* line 47, ../scss/components/_modal.scss */
+.modal .form-group {
+  margin: 0.9375rem 0;
+}
+/* line 50, ../scss/components/_modal.scss */
+.modal .icon.close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  background-size: 1.875rem 1.875rem;
+  cursor: pointer;
+}
+/* line 59, ../scss/components/_modal.scss */
+.modal .intro-text {
+  padding-top: 6.25rem;
+}
+
+/* line 64, ../scss/components/_modal.scss */
+.button-modal {
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 1;
+}
+/* line 67, ../scss/components/_modal.scss */
+.button-modal.open {
+  opacity: 0;
+  z-index: 0;
+}
+
+@media only screen and (min-width: 40.063em) {
+  /* line 76, ../scss/components/_modal.scss */
+  .modal .icon.close {
+    top: 3.125rem;
+    right: 3.125rem;
   }
 }
 /* line 3, ../scss/components/_quirks.scss */

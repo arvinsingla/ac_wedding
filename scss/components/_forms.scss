@@ -54,6 +54,7 @@ input {
 
 .radio-group {
   margin: rem-calc(20px) 0;
+  display: inline-block;
   input {
     display: none;
     &[type="radio"]:checked+label {
@@ -68,10 +69,9 @@ input {
     }
   }
   label {
-    min-width: rem-calc(200px);
+    width: rem-calc(125px);
     padding: rem-calc(16px) 0;
     border: 1px solid $middle-grey-color;
-    position: relative;
     float: left;
     @include element-text(center);
     cursor: pointer;
@@ -86,6 +86,14 @@ input {
     &:last-of-type {
       @include border-top-right-radius($global-radius);
       @include border-bottom-right-radius($global-radius);
+    }
+  }
+}
+
+@media #{$medium-up} {
+  .radio-group {
+    label {
+      width: rem-calc(200px);
     }
   }
 }

@@ -18,13 +18,7 @@
           <div class="logo white"></div>
           <h1 class="white title">Claudia & Andrew are getting married</h1>
           <h4 class="white date">On September 27, 2014 in San Antonio, TX</h4>
-          <div class="morph-button morph-button-overlay morph-button-fixed">
-            <a href="#" class="button button-modal quaternary radius wide"><span>Howdy! Go ahead and RSVP here</span><span>We promise you an awesome time!</span></a>
-            <div class="morph-content">
-              <span class="icon icon-close">Close the overlay</span>
-              This is a test
-            </div>
-          </div>
+          <a href="#" class="button button-modal quaternary radius wide"><span>Howdy! Go ahead and RSVP here</span><span>We promise you an awesome time!</span></a>
         </div>
         <div class="row-footer text-center">
           <h5 class="show-for-large-up scroll-down">Scroll down</h5>
@@ -266,13 +260,7 @@
         <img class="row-image" data-interchange="[images/bg-rsvp-mobile.jpg, (default)], [images/bg-rsvp-tablet.jpg, (medium)], [images/bg-rsvp.jpg, (large)]">
         <div class="row-content with-background text-center">
           <h1 class="white title">We hope to see you there!</h1>
-          <div class="morph-button morph-button-overlay morph-button-fixed">
-            <a href="#" class="button button-modal quaternary radius wide"><span>Come on, RSVP already!</span><span>We promise you an awesome time!</span></a>
-            <div class="morph-content">
-              <span class="icon icon-close">Close the overlay</span>
-              This is a test
-            </div>
-          </div>
+          <a href="#" class="button button-modal quaternary radius wide"><span>Come on, RSVP already!</span><span>We promise you an awesome time!</span></a>
         </div>
         <div class="row-footer text-center">
           <p class="intro white">
@@ -284,11 +272,41 @@
       </div>
     </div>
 
+    <div class="row modal">
+      <div class="small-12 medium-7 large-7 small-centered columns">
+        <div class="row-content intro-text text-center">
+          <h2>Your RSVP is greatly appreciated</h2>
+          <p class="intro">We need to know how many folks are going to show up. You don’t want us to run out of booze, do you?! Well, if you’re not attending I suppose it wouldn’t matter.</p>
+        </div>
+      </div>
+      <div class="small-12 medium-6 large-5 small-centered columns">
+        <div class="row-content text-center">
+          <form>
+            <div class="radio-group form-group">
+              <input type="radio" name="going" value="1" id="going"><label for="going">I'm Going</label>
+              <input type="radio" name="going" value="0" id="not-going"><label for="not-going">I'm Sorry :(</label>
+            </div>
+            <div class="text-group form-group">
+              <input type="text" placeholder="Full Name" />
+              <input type="text" placeholder="Email Address" />
+              <input type="text" placeholder="Phone #" />
+              <input type="text" placeholder="Are you bringing a +1? (Y/N)" />
+            </div>
+            <select class="form-group">
+              <option value="" selected>Please select your meal option</option>
+              <option value="chicken">I'd enjoy the chicken entree</option>
+              <option value="vegetarian">I'll have the vegetarian entree</option>
+            </select>
+            <input type="submit" class="form-group" value="Confirm your reservation">
+          </form>
+        </div>
+      </div>
+      <div class="icon close"></div>
+    </div>
+
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/foundation/js/foundation.min.js"></script>
     <!-- <script src="bower_components/bower-skrollr/skrollr.js"></script> -->
-    <script src="js/classie.js"></script>
-    <script src="js/uiMorphingButton_fixed.js"></script>
     <script src="js/app.js"></script>
     <script type="text/javascript" src="//use.typekit.net/bgq8iid.js"></script>
     <script type="text/javascript">try{Typekit.load();}catch(e){}</script>

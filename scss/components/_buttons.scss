@@ -6,7 +6,7 @@
   background: $charcoal-color;
   border-color: $charcoal-color;
   overflow: hidden;
-  z-index: 1000;
+  z-index: 999;
   @include user-select(none);
   @include element-text(center);
   &:hover {
@@ -85,4 +85,10 @@
     top: 100%;
     opacity: 0;
   }
+}
+
+input[type="submit"] {
+  @include border-radius($global-radius);
+  background-color: $charcoal-color;
+  color: $white-color;
 }

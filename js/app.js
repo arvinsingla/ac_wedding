@@ -19,14 +19,29 @@ $(document).foundation();
   });
 
 */
-  $('.button').click(function(e) {
+  // Click handler for the modal button to launch the modal content.
+  $('a.button-modal').click(function(e) {
     e.preventDefault();
-    var pos = $(this).position();
-    var $parent = $(this).parents('.modal-container');
-    var $modalContent = $parent.find('.modal-content');
-    $modalContent.css('left', pos.left);
-    $modalContent.css('top', pos.top);
-    //$parent.toggleClass('open');
+    var pos = $(this).offset();
+    var $modalContent = $('.modal');
+    $modalContent.css('left', pos.left - $(window).scrollLeft());
+    $modalContent.css('top', pos.top - $(window).scrollTop());
+    $(this).toggleClass('open');
+    // Make sure this fires after half a second.
+    setTimeout(function(){
+      $('body').toggleClass('locked');
+      $modalContent.toggleClass('open');
+    }, 350);
+  });
+
+  // Click handler to close the modal button when the close icon is clicked.
+  $('.close').click(function(e) {
+    var $button = $('a.button-modal.open');
+    var pos = $button.offset();
+    var $modalContent = $(this).parent();
+    $button.toggleClass('open');
+    $modalContent.toggleClass('open');
+    $('body').toggleClass('locked');
   });
 
 
@@ -105,7 +120,7 @@ $(document).foundation();
 
 }(jQuery));
 
-
+/*
 (function() {
   var docElem = window.document.documentElement, didScroll, scrollPosition;
 
@@ -175,7 +190,7 @@ $(document).foundation();
   } );
 })();
 
-/*
+
 // Angular JS Application
 (function() {
   angular.module('weddingApp', ['ngCurtain']);
