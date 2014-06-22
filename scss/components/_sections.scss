@@ -318,6 +318,60 @@
   }
 }
 
+// Wedding party
+
+// In-between
+.wedding-party {
+  padding: 10%;
+  h5 {
+    margin-bottom: rem-calc(15px);
+  }
+  .icon {
+    margin: rem-calc(40px) 0;
+  }
+  .row-content {
+    float: left;
+    width: 100%;
+  }
+  .row-images {
+    float: right;
+    margin-top: rem-calc(30px);
+  }
+  .owl-carousel {
+    .owl-item {
+      opacity: 0.25;
+      &.center {
+        opacity: 1;
+      }
+    }
+  }
+  .row-best-man {
+    .row-images {
+      width: 100%;
+      .wedding-party-person {
+        margin: 0 auto;
+      }
+    }
+  }
+}
+
+@media #{$large-up} {
+  .wedding-party {
+    .row-content {
+      float: left;
+      width: 60%;
+    }
+    .row-best-man {
+      .row-images {
+        width: auto;
+        .wedding-party-person {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+
 // Love to hear from you
 .hear-from-you-content {
   padding: 10%;

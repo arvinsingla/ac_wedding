@@ -46,22 +46,31 @@ $(document).foundation();
 
 
   // Allow avatars to swap out text on mobile form factors
-  if (!matchMedia(Foundation.media_queries['large']).matches) {
-    $('img.avatar').on('click', function() {
-      if ($(this).data('person') == 'andrew') {
-        $('.claudia-avatar img').addClass('inactive');
-        $('.claudia-text').addClass('hide');
-        $('.andrew-avatar img').removeClass('inactive');
-        $('.andrew-text').removeClass('hide');
-      } else {
-        $('.claudia-avatar img').removeClass('inactive');
-        $('.claudia-text').removeClass('hide');
-        $('.andrew-avatar img').addClass('inactive');
-        $('.andrew-text').addClass('hide');
-      }
-    });
-    $('img.avatar').first().trigger('click');
+  var avatarSetup = function() {
+    if (!matchMedia(Foundation.media_queries['large']).matches) {
+      $('img.avatar').on('click', function() {
+        if ($(this).data('person') == 'andrew') {
+          $('.claudia-avatar img').addClass('inactive');
+          $('.claudia-text').addClass('hide');
+          $('.andrew-avatar img').removeClass('inactive');
+          $('.andrew-text').removeClass('hide');
+        } else {
+          $('.claudia-avatar img').removeClass('inactive');
+          $('.claudia-text').removeClass('hide');
+          $('.andrew-avatar img').addClass('inactive');
+          $('.andrew-text').addClass('hide');
+        }
+      });
+      $('img.avatar').first().trigger('click');
+    } else {
+      $('.claudia-avatar img').removeClass('inactive');
+      $('.claudia-text').removeClass('hide');
+      $('.andrew-avatar img').removeClass('inactive');
+      $('.andrew-text').removeClass('hide');
+      $('img.avatar').off();
+    }
   }
+  avatarSetup();
 
   // Custom quotes
   var quotes = [
@@ -117,6 +126,48 @@ $(document).foundation();
       $(this).removeClass('selected');
     }
   });
+
+  var bridesmaidsSetup = function() {
+    // Handle the bridesmaids functionality based on device size.
+    if (matchMedia(Foundation.media_queries['large']).matches) {
+      // Destroy carousel if present
+      $("#bridesmaids-carousel").trigger('destroy');
+      // Handle sticky text for bridesmaids page.
+      $(".row-bridesmaids .row-content").stick_in_parent();
+      setTimeout(function(){
+        $(document.body).trigger("sticky_kit:recalc");
+      }, 1000);
+
+    } else {
+      // Remove sticky text.
+      $(".row-bridesmaids .row-content").trigger("sticky_kit:detach");
+      // This is where the swipe slider goes.
+      $('#bridesmaids-carousel').owlCarousel({
+        center: true,
+        loop: true,
+        margin: 10,
+        autoWidth: true,
+        responsive : {
+          // breakpoint from 0 up
+          0 : {
+            items: 1,
+          },
+          // breakpoint from 768 up
+          768 : {
+            items: 3,
+          }
+        }
+      });
+    }
+  }
+  bridesmaidsSetup();
+
+  // Throttled resize function
+  $(window).on('resize orientationchange', Foundation.utils.throttle(function(e){
+    avatarSetup();
+    bridesmaidsSetup();
+    console.log('Resized');
+  }, 300));
 
 }(jQuery));
 
