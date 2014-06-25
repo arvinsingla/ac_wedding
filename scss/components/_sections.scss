@@ -1,7 +1,10 @@
 // Row Content
 
-.row {
+ol > li {
   @include single-box-shadow($shadow-color, 0px, rem-calc(5px), rem-calc(15px), false, false);
+}
+
+.row {
   .row-content {
     width: 100%;
     &.with-background {

@@ -19,7 +19,7 @@ $(document).foundation();
   });
 
 */
-  // Click handler for the modal button to launch the modal content.
+  // Modal open (button)
   $('a.button-modal').click(function(e) {
     e.preventDefault();
     var pos = $(this).offset();
@@ -34,7 +34,7 @@ $(document).foundation();
     }, 350);
   });
 
-  // Click handler to close the modal button when the close icon is clicked.
+  // Modal close (X)
   $('.close').click(function(e) {
     var $button = $('a.button-modal.open');
     var pos = $button.offset();
@@ -44,8 +44,13 @@ $(document).foundation();
     $('body').toggleClass('locked');
   });
 
+  // Set height for registry columns
+  var leftHeight = $('.registry-left').outerHeight();
+  console.log(leftHeight);
+  $('.registry-right').css('height', leftHeight + 'px');
+  $('.registry-left').css('height', leftHeight + 'px');
 
-  // Allow avatars to swap out text on mobile form factors
+  // Avatar swap
   var avatarSetup = function() {
     if (!matchMedia(Foundation.media_queries['large']).matches) {
       $('img.avatar').on('click', function() {
@@ -70,6 +75,7 @@ $(document).foundation();
       $('img.avatar').off();
     }
   }
+  // Initial run of avatar swap
   avatarSetup();
 
   // Custom quotes
@@ -91,11 +97,6 @@ $(document).foundation();
     $(this).fadeOut(function() {
       $(this).html(quotes[quotePosition]).fadeIn()
     });
-  });
-
-  // Ensure each row has a higher z-index then the one below it.
-  $('div.row').each(function(index) {
-    $(this).css('z-index', 100 - index);
   });
 
   // Ensure textfields in a group properly overlap vertically.
@@ -127,17 +128,13 @@ $(document).foundation();
     }
   });
 
+
   var bridesmaidsSetup = function() {
     // Handle the bridesmaids functionality based on device size.
     if (matchMedia(Foundation.media_queries['large']).matches) {
       // Destroy carousel if present
       $("#bridesmaids-carousel").trigger('destroy');
-      // Handle sticky text for bridesmaids page.
-      $(".row-bridesmaids .row-content").stick_in_parent();
-      setTimeout(function(){
-        $(document.body).trigger("sticky_kit:recalc");
-      }, 1000);
-
+      // @todo This is where we do the sticky text.
     } else {
       // Remove sticky text.
       $(".row-bridesmaids .row-content").trigger("sticky_kit:detach");
@@ -168,6 +165,8 @@ $(document).foundation();
     bridesmaidsSetup();
     console.log('Resized');
   }, 300));
+
+  $('.curtains').curtain();
 
 }(jQuery));
 
