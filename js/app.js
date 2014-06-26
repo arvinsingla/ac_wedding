@@ -8,6 +8,8 @@ $(document).foundation();
   // Open external links in a new window.
   $("a[href^='http://']").attr("target","_blank");
 
+  $('.modal').css('z-index', -1);
+
   // Modal open (button)
   $('a.button-modal').click(function(e) {
     e.preventDefault();
@@ -83,10 +85,10 @@ $(document).foundation();
         data: {
           'key': '444nOhDtNECZLeNBUr-8Sg',
           'message': {
-            'from_email': 'us@andrewandclaudia.com',
+            'from_email': 'us@andrewandclaudia.us',
             'to': [
                 {
-                  'email': 'us@andrewandclaudia.com',
+                  'email': 'us@andrewandclaudia.us',
                   'name': 'Claudia & Andrew'
                 },
               ],

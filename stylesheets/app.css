@@ -4169,22 +4169,17 @@ body.loaded .loading {
 }
 
 @media only screen and (max-width: 40em) {
-  /* line 70, ../scss/components/_modal.scss */
-  .locked {
-    position: fixed;
-  }
-
-  /* line 74, ../scss/components/_modal.scss */
+  /* line 73, ../scss/components/_modal.scss */
   .modal p.intro {
     display: none;
   }
-  /* line 77, ../scss/components/_modal.scss */
+  /* line 76, ../scss/components/_modal.scss */
   .modal .intro-text {
     padding-top: 3.125rem;
   }
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 85, ../scss/components/_modal.scss */
+  /* line 84, ../scss/components/_modal.scss */
   .modal .icon.close {
     top: 3.125rem;
     right: 3.125rem;
