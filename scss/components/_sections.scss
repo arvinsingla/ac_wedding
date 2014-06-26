@@ -1,10 +1,18 @@
 // Row Content
 
 body {
-  opacity: 0;
-  @include single-transition(opacity, 2s, false, 1s);
+  .row {
+    opacity: 0;
+    @include single-transition(opacity, 1.5s, false, false);
+  }
   &.loaded {
-    opacity: 1;
+    .row {
+      opacity: 1;
+    }
+    .loading {
+      opacity: 0;
+      z-index: -1;
+    }
   }
 }
 
@@ -37,6 +45,19 @@ body {
 }
 
 // Individual Sections
+
+.loading {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/ajax-loader.gif);
+  background-position: center center;
+  background-size: rem-calc(30px) rem-calc(30px);
+  background-repeat: no-repeat;
+  z-index: 1001;
+  position: fixed;
+  @include single-transition(opacity, 0.5s, false, false);
+}
 
 // Intro
 .intro,

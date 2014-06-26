@@ -40,10 +40,11 @@ scrollFn();
 // jQuery specific functionality for the front end.
 (function ($) {
 
-  // Add the loaded class when the first image is replaced.
-  $(document).on('replace', 'img', function (e, new_path, original_path) {
+  // Add the loaded class when the page has fully loaded.
+  $(window).bind("load", function() {
     $('body').addClass('loaded');
   });
+
 
   // Modal open (button)
   $('a.button-modal').click(function(e) {

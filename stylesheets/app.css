@@ -3514,36 +3514,40 @@ select.error::-webkit-input-placeholder {
     width: 25rem;
   }
 }
-/* line 3, ../scss/components/_sections.scss */
-body {
+/* line 4, ../scss/components/_sections.scss */
+body .row {
   opacity: 0;
-  -webkit-transition: opacity 2s;
-  -webkit-transition-delay: 1s;
-  -moz-transition: opacity 2s 1s;
-  -o-transition: opacity 2s 1s;
-  transition: opacity 2s 1s;
+  -webkit-transition: opacity 1.5s;
+  -moz-transition: opacity 1.5s;
+  -o-transition: opacity 1.5s;
+  transition: opacity 1.5s;
 }
-/* line 6, ../scss/components/_sections.scss */
-body.loaded {
+/* line 9, ../scss/components/_sections.scss */
+body.loaded .row {
   opacity: 1;
 }
+/* line 12, ../scss/components/_sections.scss */
+body.loaded .loading {
+  opacity: 0;
+  z-index: -1;
+}
 
-/* line 11, ../scss/components/_sections.scss */
+/* line 19, ../scss/components/_sections.scss */
 .row {
   -webkit-box-shadow: 0px 0.3125rem 0.9375rem #a4a4a4;
   -moz-box-shadow: 0px 0.3125rem 0.9375rem #a4a4a4;
   box-shadow: 0px 0.3125rem 0.9375rem #a4a4a4;
 }
-/* line 13, ../scss/components/_sections.scss */
+/* line 21, ../scss/components/_sections.scss */
 .row .row-content {
   width: 100%;
 }
-/* line 15, ../scss/components/_sections.scss */
+/* line 23, ../scss/components/_sections.scss */
 .row .row-content.with-background {
   position: absolute;
   top: 15%;
 }
-/* line 20, ../scss/components/_sections.scss */
+/* line 28, ../scss/components/_sections.scss */
 .row .row-footer {
   width: 100%;
   position: absolute;
@@ -3551,28 +3555,45 @@ body.loaded {
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 28, ../scss/components/_sections.scss */
+  /* line 36, ../scss/components/_sections.scss */
   .row.footer {
     bottom: 20%;
   }
 }
 @media only screen and (min-width: 64.063em) {
-  /* line 34, ../scss/components/_sections.scss */
+  /* line 42, ../scss/components/_sections.scss */
   .row.content {
     min-height: 56.25rem;
   }
 }
-/* line 44, ../scss/components/_sections.scss */
+/* line 49, ../scss/components/_sections.scss */
+.loading {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/ajax-loader.gif);
+  background-position: center center;
+  background-size: 1.875rem 1.875rem;
+  background-repeat: no-repeat;
+  z-index: 1001;
+  position: fixed;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+/* line 65, ../scss/components/_sections.scss */
 .intro .title,
 .rsvp .title {
   padding: 1.875rem 0 1.25rem 0;
 }
-/* line 47, ../scss/components/_sections.scss */
+/* line 68, ../scss/components/_sections.scss */
 .intro .date,
 .rsvp .date {
   padding-bottom: 3.75rem;
 }
-/* line 50, ../scss/components/_sections.scss */
+/* line 71, ../scss/components/_sections.scss */
 .intro .scroll-down,
 .rsvp .scroll-down {
   display: inline-block;
@@ -3583,91 +3604,91 @@ body.loaded {
   background-repeat: no-repeat;
 }
 
-/* line 62, ../scss/components/_sections.scss */
+/* line 83, ../scss/components/_sections.scss */
 .about-us-content {
   padding: 10%;
 }
-/* line 64, ../scss/components/_sections.scss */
+/* line 85, ../scss/components/_sections.scss */
 .about-us-content h2 {
   padding-bottom: 1.25rem;
 }
-/* line 67, ../scss/components/_sections.scss */
+/* line 88, ../scss/components/_sections.scss */
 .about-us-content h4 {
   padding: 1.25rem 0;
 }
-/* line 70, ../scss/components/_sections.scss */
+/* line 91, ../scss/components/_sections.scss */
 .about-us-content .avatar {
   cursor: pointer;
   padding-top: 1.875rem;
 }
-/* line 74, ../scss/components/_sections.scss */
+/* line 95, ../scss/components/_sections.scss */
 .about-us-content .andrew-avatar {
   text-align: right;
   padding-right: 0.3125rem;
 }
-/* line 78, ../scss/components/_sections.scss */
+/* line 99, ../scss/components/_sections.scss */
 .about-us-content .claudia-avatar {
   text-align: left;
   padding-left: 0.3125rem;
 }
-/* line 82, ../scss/components/_sections.scss */
+/* line 103, ../scss/components/_sections.scss */
 .about-us-content blockquote {
   cursor: pointer;
 }
-/* line 85, ../scss/components/_sections.scss */
+/* line 106, ../scss/components/_sections.scss */
 .about-us-content .row-content.quotes {
   padding-top: 3.75rem;
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 92, ../scss/components/_sections.scss */
+  /* line 113, ../scss/components/_sections.scss */
   .about-us-content .avatar {
     padding-bottom: 1.875rem;
   }
 }
 @media only screen and (min-width: 64.063em) {
-  /* line 100, ../scss/components/_sections.scss */
+  /* line 121, ../scss/components/_sections.scss */
   .about-us-content h2 {
     position: relative;
     top: 6.25rem;
     margin-top: -6.25rem;
   }
-  /* line 106, ../scss/components/_sections.scss */
+  /* line 127, ../scss/components/_sections.scss */
   .about-us-content .andrew-avatar,
   .about-us-content .andrew-text {
     text-align: left;
     padding-right: 10%;
   }
-  /* line 111, ../scss/components/_sections.scss */
+  /* line 132, ../scss/components/_sections.scss */
   .about-us-content .claudia-avatar,
   .about-us-content .claudia-text {
     text-align: right;
     padding-left: 10%;
   }
-  /* line 115, ../scss/components/_sections.scss */
+  /* line 136, ../scss/components/_sections.scss */
   .about-us-content .avatar {
     cursor: default;
     padding-top: 0;
   }
 }
-/* line 125, ../scss/components/_sections.scss */
+/* line 146, ../scss/components/_sections.scss */
 .wedding-details-content {
   padding: 10%;
 }
-/* line 127, ../scss/components/_sections.scss */
+/* line 148, ../scss/components/_sections.scss */
 .wedding-details-content .intro-text {
   padding-bottom: 3.125rem;
 }
-/* line 129, ../scss/components/_sections.scss */
+/* line 150, ../scss/components/_sections.scss */
 .wedding-details-content .intro-text h2 {
   padding-bottom: 1.25rem;
 }
-/* line 132, ../scss/components/_sections.scss */
+/* line 153, ../scss/components/_sections.scss */
 .wedding-details-content .intro-text p.intro {
   max-width: 55rem;
   margin: 0 auto;
 }
-/* line 139, ../scss/components/_sections.scss */
+/* line 160, ../scss/components/_sections.scss */
 .wedding-details-content .ceremony,
 .wedding-details-content .reception,
 .wedding-details-content .cocktail {
@@ -3675,20 +3696,20 @@ body.loaded {
   max-width: 20rem;
   margin: 0 auto;
 }
-/* line 143, ../scss/components/_sections.scss */
+/* line 164, ../scss/components/_sections.scss */
 .wedding-details-content .ceremony h4,
 .wedding-details-content .reception h4,
 .wedding-details-content .cocktail h4 {
   padding: 1.875rem 0 1.25rem 0;
 }
-/* line 146, ../scss/components/_sections.scss */
+/* line 167, ../scss/components/_sections.scss */
 .wedding-details-content .ceremony .button,
 .wedding-details-content .reception .button,
 .wedding-details-content .cocktail .button {
   margin-top: 0.625rem;
   margin-bottom: 3.125rem;
 }
-/* line 150, ../scss/components/_sections.scss */
+/* line 171, ../scss/components/_sections.scss */
 .wedding-details-content .ceremony .icon,
 .wedding-details-content .reception .icon,
 .wedding-details-content .cocktail .icon {
@@ -3696,13 +3717,13 @@ body.loaded {
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 160, ../scss/components/_sections.scss */
+  /* line 181, ../scss/components/_sections.scss */
   .ceremony p,
   .reception p,
   .cocktail p {
     padding: 0 10%;
   }
-  /* line 163, ../scss/components/_sections.scss */
+  /* line 184, ../scss/components/_sections.scss */
   .ceremony .icon,
   .reception .icon,
   .cocktail .icon {
@@ -3710,86 +3731,86 @@ body.loaded {
   }
 }
 @media only screen and (min-width: 64.063em) {
-  /* line 173, ../scss/components/_sections.scss */
+  /* line 194, ../scss/components/_sections.scss */
   .ceremony p,
   .reception p,
   .cocktail p {
     height: 9.375rem;
   }
-  /* line 176, ../scss/components/_sections.scss */
+  /* line 197, ../scss/components/_sections.scss */
   .ceremony .icon,
   .reception .icon,
   .cocktail .icon {
     margin-top: 0;
   }
 }
-/* line 184, ../scss/components/_sections.scss */
+/* line 205, ../scss/components/_sections.scss */
 .lodging-content {
   padding: 10%;
 }
-/* line 186, ../scss/components/_sections.scss */
+/* line 207, ../scss/components/_sections.scss */
 .lodging-content h2 {
   padding-bottom: 3.125rem;
 }
-/* line 190, ../scss/components/_sections.scss */
+/* line 211, ../scss/components/_sections.scss */
 .lodging-content .gunter,
 .lodging-content .courtyard {
   padding: 0 5%;
   text-align: center;
 }
-/* line 193, ../scss/components/_sections.scss */
+/* line 214, ../scss/components/_sections.scss */
 .lodging-content .gunter h5,
 .lodging-content .courtyard h5 {
   padding: 0.3125rem 0;
 }
-/* line 196, ../scss/components/_sections.scss */
+/* line 217, ../scss/components/_sections.scss */
 .lodging-content .gunter p.hotel-info,
 .lodging-content .courtyard p.hotel-info {
   margin-bottom: 1.875rem;
 }
-/* line 200, ../scss/components/_sections.scss */
+/* line 221, ../scss/components/_sections.scss */
 .lodging-content .button {
   margin-top: 1.25rem;
   margin-bottom: 4.375rem;
 }
-/* line 204, ../scss/components/_sections.scss */
+/* line 225, ../scss/components/_sections.scss */
 .lodging-content .courtyard .button {
   margin-bottom: 0;
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 212, ../scss/components/_sections.scss */
+  /* line 233, ../scss/components/_sections.scss */
   .lodging-content .gunter,
   .lodging-content .courtyard {
     text-align: left;
   }
-  /* line 214, ../scss/components/_sections.scss */
+  /* line 235, ../scss/components/_sections.scss */
   .lodging-content .gunter p.hotel-details,
   .lodging-content .courtyard p.hotel-details {
     height: 9rem;
     margin-bottom: 0;
   }
-  /* line 219, ../scss/components/_sections.scss */
+  /* line 240, ../scss/components/_sections.scss */
   .lodging-content .button {
     margin-top: 0;
     margin-bottom: 0;
   }
 }
-/* line 227, ../scss/components/_sections.scss */
+/* line 248, ../scss/components/_sections.scss */
 .in-between-content {
   padding: 5%;
 }
-/* line 229, ../scss/components/_sections.scss */
+/* line 250, ../scss/components/_sections.scss */
 .in-between-content h2 {
   padding-bottom: 1.25rem;
 }
-/* line 232, ../scss/components/_sections.scss */
+/* line 253, ../scss/components/_sections.scss */
 .in-between-content p.intro {
   padding-bottom: 3.75rem;
   max-width: 55rem;
   margin: 0 auto;
 }
-/* line 237, ../scss/components/_sections.scss */
+/* line 258, ../scss/components/_sections.scss */
 .in-between-content .double-border {
   border: 0.0625rem solid #f6f6f6;
   position: relative;
@@ -3797,7 +3818,7 @@ body.loaded {
   margin: 0 auto;
   text-align: left;
 }
-/* line 243, ../scss/components/_sections.scss */
+/* line 264, ../scss/components/_sections.scss */
 .in-between-content .double-border:before {
   content: " ";
   position: absolute;
@@ -3808,7 +3829,7 @@ body.loaded {
   bottom: 0.3125rem;
   border: 0.0625rem solid #f6f6f6;
 }
-/* line 253, ../scss/components/_sections.scss */
+/* line 274, ../scss/components/_sections.scss */
 .in-between-content .double-border li {
   text-align: left;
   color: #ffc189;
@@ -3816,54 +3837,54 @@ body.loaded {
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 262, ../scss/components/_sections.scss */
+  /* line 283, ../scss/components/_sections.scss */
   .in-between-content {
     padding: 10% 15%;
   }
-  /* line 264, ../scss/components/_sections.scss */
+  /* line 285, ../scss/components/_sections.scss */
   .in-between-content .double-border {
     width: 80%;
   }
 }
-/* line 272, ../scss/components/_sections.scss */
+/* line 293, ../scss/components/_sections.scss */
 .gifts-registry-content img {
   width: 18.75rem;
 }
-/* line 275, ../scss/components/_sections.scss */
+/* line 296, ../scss/components/_sections.scss */
 .gifts-registry-content .column {
   position: relative;
 }
-/* line 278, ../scss/components/_sections.scss */
+/* line 299, ../scss/components/_sections.scss */
 .gifts-registry-content .row-content {
   padding-top: 6.875rem;
   padding-bottom: 4.375rem;
 }
-/* line 282, ../scss/components/_sections.scss */
+/* line 303, ../scss/components/_sections.scss */
 .gifts-registry-content .registry-left {
   background-color: #f6f6f6;
   border: 1px solid #f6f6f6;
   text-align: center;
 }
-/* line 286, ../scss/components/_sections.scss */
+/* line 307, ../scss/components/_sections.scss */
 .gifts-registry-content .registry-left h2 {
   padding-bottom: 1.25rem;
 }
-/* line 289, ../scss/components/_sections.scss */
+/* line 310, ../scss/components/_sections.scss */
 .gifts-registry-content .registry-left p {
   text-align: left;
   padding-left: 3.75rem;
   padding-right: 3.75rem;
 }
-/* line 294, ../scss/components/_sections.scss */
+/* line 315, ../scss/components/_sections.scss */
 .gifts-registry-content .registry-left .button {
   margin-top: 1.875rem;
 }
-/* line 298, ../scss/components/_sections.scss */
+/* line 319, ../scss/components/_sections.scss */
 .gifts-registry-content .registry-right {
   border: 1px solid #f6f6f6;
   text-align: center;
 }
-/* line 303, ../scss/components/_sections.scss */
+/* line 324, ../scss/components/_sections.scss */
 .gifts-registry-content .registry-separator {
   width: 1.875rem;
   height: 1.875rem;
@@ -3887,58 +3908,58 @@ body.loaded {
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 323, ../scss/components/_sections.scss */
+  /* line 344, ../scss/components/_sections.scss */
   .gifts-registry-content {
     padding: 1.25rem;
   }
 }
 @media only screen and (min-width: 64.063em) {
-  /* line 330, ../scss/components/_sections.scss */
+  /* line 351, ../scss/components/_sections.scss */
   .gifts-registry-content .column {
     display: table;
     height: 56.25rem;
   }
-  /* line 334, ../scss/components/_sections.scss */
+  /* line 355, ../scss/components/_sections.scss */
   .gifts-registry-content .registry-separator {
     right: -0.9375rem;
     top: 46%;
   }
-  /* line 338, ../scss/components/_sections.scss */
+  /* line 359, ../scss/components/_sections.scss */
   .gifts-registry-content .registry-left {
     padding-left: 20%;
     display: table-cell;
     vertical-align: middle;
   }
-  /* line 343, ../scss/components/_sections.scss */
+  /* line 364, ../scss/components/_sections.scss */
   .gifts-registry-content .registry-right {
     width: 100%;
     display: table-cell;
     vertical-align: middle;
   }
 }
-/* line 354, ../scss/components/_sections.scss */
+/* line 375, ../scss/components/_sections.scss */
 .wedding-party {
   padding: 10%;
 }
-/* line 356, ../scss/components/_sections.scss */
+/* line 377, ../scss/components/_sections.scss */
 .wedding-party h5 {
   margin-bottom: 0.9375rem;
 }
-/* line 359, ../scss/components/_sections.scss */
+/* line 380, ../scss/components/_sections.scss */
 .wedding-party .icon {
   margin: 2.5rem 0;
 }
-/* line 362, ../scss/components/_sections.scss */
+/* line 383, ../scss/components/_sections.scss */
 .wedding-party .row-content {
   float: left;
   width: 100%;
 }
-/* line 366, ../scss/components/_sections.scss */
+/* line 387, ../scss/components/_sections.scss */
 .wedding-party .row-images {
   float: right;
   margin-top: 1.875rem;
 }
-/* line 371, ../scss/components/_sections.scss */
+/* line 392, ../scss/components/_sections.scss */
 .wedding-party .owl-carousel .owl-item {
   -webkit-transition: opacity 0.4s;
   -moz-transition: opacity 0.4s;
@@ -3946,39 +3967,39 @@ body.loaded {
   transition: opacity 0.4s;
   opacity: 0.25;
 }
-/* line 374, ../scss/components/_sections.scss */
+/* line 395, ../scss/components/_sections.scss */
 .wedding-party .owl-carousel .owl-item.center {
   opacity: 1;
 }
-/* line 380, ../scss/components/_sections.scss */
+/* line 401, ../scss/components/_sections.scss */
 .wedding-party .row-best-man .row-images {
   width: 100%;
 }
-/* line 382, ../scss/components/_sections.scss */
+/* line 403, ../scss/components/_sections.scss */
 .wedding-party .row-best-man .row-images .wedding-party-person {
   margin: 0 auto;
 }
 
 @media only screen and (min-width: 64.063em) {
-  /* line 391, ../scss/components/_sections.scss */
+  /* line 412, ../scss/components/_sections.scss */
   .wedding-party .row-content {
     float: left;
     width: 60%;
   }
-  /* line 396, ../scss/components/_sections.scss */
+  /* line 417, ../scss/components/_sections.scss */
   .wedding-party .row-best-man .row-images {
     width: auto;
   }
-  /* line 398, ../scss/components/_sections.scss */
+  /* line 419, ../scss/components/_sections.scss */
   .wedding-party .row-best-man .row-images .wedding-party-person {
     margin: 0;
   }
 }
-/* line 407, ../scss/components/_sections.scss */
+/* line 428, ../scss/components/_sections.scss */
 .hear-from-you-content {
   padding: 10%;
 }
-/* line 409, ../scss/components/_sections.scss */
+/* line 430, ../scss/components/_sections.scss */
 .hear-from-you-content a {
   display: block;
   color: black;
@@ -3990,47 +4011,47 @@ body.loaded {
   font-weight: 700;
   letter-spacing: 0.1rem;
 }
-/* line 419, ../scss/components/_sections.scss */
+/* line 440, ../scss/components/_sections.scss */
 .hear-from-you-content a:hover {
   color: #ffc189;
 }
-/* line 423, ../scss/components/_sections.scss */
+/* line 444, ../scss/components/_sections.scss */
 .hear-from-you-content a h4:hover {
   color: #ffc189;
 }
-/* line 428, ../scss/components/_sections.scss */
+/* line 449, ../scss/components/_sections.scss */
 .hear-from-you-content .icon {
   margin-top: 4.6875rem;
   margin-bottom: 0.5rem;
 }
 
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 436, ../scss/components/_sections.scss */
+  /* line 457, ../scss/components/_sections.scss */
   .hear-from-you-content .icon {
     margin-top: 5.3125rem;
   }
 }
 @media only screen and (min-width: 64.063em) {
-  /* line 444, ../scss/components/_sections.scss */
+  /* line 465, ../scss/components/_sections.scss */
   .hear-from-you-content h2 {
     padding-top: 12.5rem;
     padding-bottom: 1.25rem;
   }
-  /* line 448, ../scss/components/_sections.scss */
+  /* line 469, ../scss/components/_sections.scss */
   .hear-from-you-content .icon {
     margin-top: 1.875rem;
   }
-  /* line 451, ../scss/components/_sections.scss */
+  /* line 472, ../scss/components/_sections.scss */
   .hear-from-you-content a {
     font-size: 1rem;
   }
 }
 @media only screen and (min-width: 40.063em) and (max-width: 64em) {
-  /* line 460, ../scss/components/_sections.scss */
+  /* line 481, ../scss/components/_sections.scss */
   .row.rsvp .row-content.with-background {
     top: 30%;
   }
-  /* line 463, ../scss/components/_sections.scss */
+  /* line 484, ../scss/components/_sections.scss */
   .row.rsvp .row-footer {
     bottom: 15%;
   }
