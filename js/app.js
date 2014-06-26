@@ -10,6 +10,8 @@ $(document).foundation();
     $('body').addClass('loaded');
   });
 
+  // Open external links in a new window.
+  $("a[href^='http://']").attr("target","_blank");
 
   // Modal open (button)
   $('a.button-modal').click(function(e) {
