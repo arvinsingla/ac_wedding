@@ -241,6 +241,10 @@ $(document).foundation();
     }
   }
 
+  if (matchMedia(Foundation.media_queries['small']).matches) {
+    $('.row.intro a.button-modal').html('<span>Howdy! RSVP here</span><span>We promise a great time!</span>');
+  }
+
   // Throttled resize function
   $(window).on('resize orientationchange', Foundation.utils.throttle(function(e){
     avatarSetup();
@@ -250,7 +254,7 @@ $(document).foundation();
   // Add the loaded class when the page has fully loaded.
   $(window).bind("load", function() {
     $('body').addClass('loaded');
-    //bridesmaidsSetup();
+    bridesmaidsSetup();
   });
 
 }(jQuery));
