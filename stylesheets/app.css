@@ -4087,62 +4087,59 @@ body.loaded .loading {
 /* line 1, ../scss/components/_modal.scss */
 .locked {
   overflow: hidden;
-  position: fixed;
 }
 
-/* line 6, ../scss/components/_modal.scss */
+/* line 5, ../scss/components/_modal.scss */
 .modal {
   opacity: 0;
   top: 0 !important;
   left: 0 !important;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background-color: white;
   -webkit-transition: opacity 1s ease;
   transition: opacity 1s ease;
   position: fixed;
-  z-index: -1;
 }
-/* line 18, ../scss/components/_modal.scss */
+/* line 15, ../scss/components/_modal.scss */
 .modal.open {
   opacity: 1;
   z-index: 1000;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
 }
-/* line 23, ../scss/components/_modal.scss */
+/* line 20, ../scss/components/_modal.scss */
 .modal.open > div {
   visibility: visible;
   opacity: 1;
   top: 0;
 }
-/* line 29, ../scss/components/_modal.scss */
+/* line 26, ../scss/components/_modal.scss */
 .modal > div {
   visibility: hidden;
   opacity: 0;
   position: relative;
   top: -3.125rem;
-  -webkit-transition: opacity 0.5s ease, top 1s ease;
-  transition: opacity 0.5s ease, top 1s ease;
-  -webkit-transition-delay: 0.5s;
-  /* Safari and Chrome */
-  transition-delay: 0.5s;
+  -webkit-transition-delay: 1s;
+  /* Safari */
+  transition-delay: 1s;
+  -webkit-transition: opacity 1s ease, top 1s ease;
+  transition: opacity 1s ease, top 1s ease;
 }
-/* line 39, ../scss/components/_modal.scss */
+/* line 36, ../scss/components/_modal.scss */
 .modal form {
   display: inline-block;
   margin: 0 auto;
 }
-/* line 43, ../scss/components/_modal.scss */
+/* line 40, ../scss/components/_modal.scss */
 .modal .text-group {
   text-align: left;
 }
-/* line 46, ../scss/components/_modal.scss */
+/* line 43, ../scss/components/_modal.scss */
 .modal .form-group {
   margin: 0.9375rem 0;
 }
-/* line 49, ../scss/components/_modal.scss */
+/* line 46, ../scss/components/_modal.scss */
 .modal .icon.close {
   position: absolute;
   top: 1.25rem;
@@ -4152,12 +4149,12 @@ body.loaded .loading {
   background-size: 1.875rem 1.875rem;
   cursor: pointer;
 }
-/* line 58, ../scss/components/_modal.scss */
+/* line 55, ../scss/components/_modal.scss */
 .modal .intro-text {
   padding-top: 6.25rem;
 }
 
-/* line 63, ../scss/components/_modal.scss */
+/* line 60, ../scss/components/_modal.scss */
 .button-modal {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -4165,13 +4162,18 @@ body.loaded .loading {
   transition: all 0.5s;
   opacity: 1;
 }
-/* line 66, ../scss/components/_modal.scss */
+/* line 63, ../scss/components/_modal.scss */
 .button-modal.open {
   opacity: 0;
   z-index: 0;
 }
 
 @media only screen and (max-width: 40em) {
+  /* line 70, ../scss/components/_modal.scss */
+  .locked {
+    position: fixed;
+  }
+
   /* line 74, ../scss/components/_modal.scss */
   .modal p.intro {
     display: none;

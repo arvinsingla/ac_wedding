@@ -1,6 +1,5 @@
 .locked {
   overflow: hidden;
-  position: fixed;
 }
 
 .modal {
@@ -9,12 +8,10 @@
   left: 0 !important;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background-color: $white-color;
   -webkit-transition: opacity 1s ease;
   transition: opacity 1s ease;
   position: fixed;
-  z-index: -1;
   &.open {
     opacity: 1;
     z-index: 1000;
@@ -31,10 +28,10 @@
     opacity: 0;
     position: relative;
     top: rem-calc(-50px);
-    -webkit-transition: opacity 0.5s ease, top 1s ease;
-    transition: opacity 0.5s ease, top 1s ease;
-    -webkit-transition-delay: 0.5s; /* Safari and Chrome */
-    transition-delay: 0.5s;
+    -webkit-transition-delay: 1s; /* Safari */
+    transition-delay: 1s;
+    -webkit-transition: opacity 1s ease, top 1s ease;
+    transition: opacity 1s ease, top 1s ease;
   }
   form {
     display: inline-block;
@@ -70,6 +67,9 @@
 }
 
 @media #{$small-only} {
+  .locked {
+    position: fixed;
+  }
   .modal {
     p.intro {
       display: none;

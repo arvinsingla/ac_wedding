@@ -11,8 +11,8 @@ $(document).foundation();
   // Modal open (button)
   $('a.button-modal').click(function(e) {
     e.preventDefault();
-    var pos = $(this).offset();
     var $modalContent = $('.modal');
+    $modalContent.css('z-index', 1000);
     $(this).toggleClass('open');
     $('body').toggleClass('locked');
     $modalContent.toggleClass('open');
@@ -21,11 +21,13 @@ $(document).foundation();
   // Modal close (X)
   $('.close').click(function(e) {
     var $button = $('a.button-modal.open');
-    var pos = $button.offset();
     var $modalContent = $(this).parent();
     $button.toggleClass('open');
     $modalContent.toggleClass('open');
     $('body').toggleClass('locked');
+    setTimeout(function(){
+      $modalContent.css('z-index', -1);
+    }, 1000);
   });
 
   // Function to lock the RSVP form and display thank you message.
@@ -248,7 +250,7 @@ $(document).foundation();
   // Add the loaded class when the page has fully loaded.
   $(window).bind("load", function() {
     $('body').addClass('loaded');
-    bridesmaidsSetup();
+    //bridesmaidsSetup();
   });
 
 }(jQuery));
