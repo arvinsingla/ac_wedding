@@ -416,29 +416,29 @@
           <p class="intro">We need to know how many folks are going to show up. You don’t want us to run out of booze, do you?! Well, if you’re not attending I suppose it wouldn’t matter.</p>
         </div>
       </div>
-      <div class="small-12 medium-6 large-5 small-centered columns">
+      <div class="small-12 medium-5 large-4 small-centered columns">
         <div class="row-content text-center">
-          <form>
+          <form id="rsvp-form">
             <div class="radio-group form-group">
-              <input type="radio" name="going" value="1" id="going"><label for="going">I'm Going</label>
-              <input type="radio" name="going" value="0" id="not-going"><label for="not-going">I'm Sorry :(</label>
+              <input type="radio" name="going" value="yes" id="going" required><label for="going">I'm Going</label>
+              <input type="radio" name="going" value="no" id="not-going" required><label for="not-going">I'm Sorry :(</label>
             </div>
             <div class="text-group form-group">
-              <input type="text" placeholder="Full Name" />
-              <input type="text" placeholder="Email Address" />
-              <input type="text" placeholder="Phone #" />
-              <select class="form-group">
+              <input type="text" placeholder="Full Name" name="name" required/>
+              <input type="text" type="email" placeholder="Email Address" name="email" />
+              <input type="text" placeholder="Phone #" name="phone" />
+              <select class="form-group" name="plusone">
                 <option value="" selected>Are you bringing a +1? (Y/N)</option>
                 <option value="yes">Yes, I'm bringing a +1</option>
                 <option value="no">No, I am not bringing a +1</option>
               </select>
             </div>
-            <select class="form-group">
+            <select class="form-group" name="meal">
               <option value="" selected>Please select your meal option</option>
               <option value="chicken">I'd enjoy the chicken entree</option>
               <option value="vegetarian">I'll have the vegetarian entree</option>
             </select>
-            <input type="submit" class="form-group" value="Confirm your reservation">
+            <input type="submit" name="rsvp-submit" class="form-group" value="Confirm your reservation">
           </form>
         </div>
       </div>
@@ -449,6 +449,8 @@
     <script src="bower_components/foundation/js/foundation.js"></script>
     <script src="js/owl.carousel.js"></script>
     <script src="js/jquery.sticky-kit.min.js"></script>
+    <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="js/jquery.form.js"></script>
     <!-- <script src="js/curtain.js"></script> -->
     <script src="js/app.js"></script>
     <script type="text/javascript" src="//use.typekit.net/bgq8iid.js"></script>

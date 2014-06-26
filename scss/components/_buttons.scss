@@ -91,4 +91,8 @@ input[type="submit"] {
   @include border-radius($global-radius);
   background-color: $charcoal-color;
   color: $white-color;
+  @include single-transition(background-color, 1s, false, false);
+  &.complete {
+    background-color: $green-color;
+  }
 }

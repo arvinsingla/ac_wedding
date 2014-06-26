@@ -2,23 +2,14 @@
 // Documentation can be found at: http://foundation.zurb.com/docs
 $(document).foundation();
 
-// jQuery specific fixes for the front end.
+// jQuery specific functionality for the front end.
 (function ($) {
 
-  // Enable lazy loading for images.
-  /*
-  $('img.bttrlazyloading').bttrlazyloading({
-    animation: 'fadeIn',
-    backgroundcolor: 'transparent'
-  });
-  var s = skrollr.init({
-    forceHeight: true,
-    render: function(data) {
-      //Debugging - Log the current scroll position.
-    }
+  // Add the loaded class when the first image is replaced.
+  $(document).on('replace', 'img', function (e, new_path, original_path) {
+    $('body').addClass('loaded');
   });
 
-*/
   // Modal open (button)
   $('a.button-modal').click(function(e) {
     e.preventDefault();
@@ -39,13 +30,117 @@ $(document).foundation();
     $('body').toggleClass('locked');
   });
 
-  // Set height for registry columns
-  /*
-  var leftHeight = $('.registry-left').outerHeight();
-  console.log(leftHeight);
-  $('.registry-right').css('height', leftHeight + 'px');
-  $('.registry-left').css('height', leftHeight + 'px');
-  */
+  // Function to lock the RSVP form and display thank you message.
+  var rsvpLock = function() {
+    $('form#rsvp-form input').attr('disabled', 'disabled');
+    $('form#rsvp-form select').attr('disabled', 'disabled');
+    $('form#rsvp-form label').attr('disabled', 'disabled');
+    $('form#rsvp-form input[type="submit"]').addClass('complete').attr('value', 'Thanks for RSVPING!');
+  }
+
+  // Check the RSVP cookie and lock the form if set.
+  var myCookie = document.cookie.replace(/(?:(?:^|.*;\s*)rsvp\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+  if (myCookie) {
+    rsvpLock();
+    $('label').hide();
+    $('input[name="name"]').hide();
+    $('input[name="email"]').hide();
+    $('input[name="phone"]').hide();
+    $('select[name="plusone"]').hide();
+    $('select[name="meal"]').hide();
+  } else {
+    // Initially hide the extra fields.
+    $('input[name="name"]').hide();
+    $('input[name="email"]').hide();
+    $('input[name="phone"]').hide();
+    $('select[name="plusone"]').hide();
+    $('select[name="meal"]').hide();
+    $('input[type="submit"][name="rsvp-submit"]').hide();
+  }
+
+  // RSVP Form validation and submission.
+  $('form#rsvp-form').ajaxForm().validate({
+    submitHandler: function(form) {
+      $(form).ajaxSubmit({
+        type: 'POST',
+        url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+        beforeSerialize: function($form, options) {
+          // Manually fetch the data from the form.
+          var name = $('input[name="name"]').val();
+          var going = $('input[type="radio"][name="going"]:checked').val();
+          var email = $('input[name="email"]').val();
+          var phone = $('input[name="phone"]').val();
+          var plusone = $('select[name="plusone"]').val();
+          var meal = $('select[name="meal"]').val();
+          options.data.message.subject = "RSVP from " + name;
+          options.data.message.html = "name: " + name + '<br/>';
+          options.data.message.html += "going: " + going + '<br/>';
+          options.data.message.html += "email: " + email + '<br/>';
+          options.data.message.html += "phone: " + phone + '<br/>';
+          options.data.message.html += "plusone: " + plusone + '<br/>';
+          options.data.message.html += "meal: " + meal + '<br/>';
+        },
+        data: {
+          'key': '444nOhDtNECZLeNBUr-8Sg',
+          'message': {
+            'from_email': 'arvin.singla@gmail.com',
+            'to': [
+                {
+                  'email': 'arvin.singla@gmail.com',
+                  'name': 'Arvin Singla'
+                },
+              ],
+            'autotext': 'true',
+          }
+        },
+        success: function(response) {
+          if (response.length && response[0].status == 'sent') {
+            rsvpLock();
+            document.cookie="rsvp=true";
+          }
+        }
+      });
+    },
+    errorPlacement: function(error,element) {
+      return true;
+    }
+  });
+
+  var rebuildForm = function() {
+    // Ensure textfields in a group properly overlap vertically.
+    $('.text-group input').each(function(index) {
+      if (index) {
+        $(this).css('top', '-' + index + 'px');
+      }
+    });
+
+    // Ensure textfields in a group properly overlap horizontally.
+    $('.radio-group label').each(function(index) {
+      if (index) {
+        $(this).css('left', '-' + index + 'px');
+      }
+    });
+  }
+  rebuildForm();
+
+  // Show and add validation for fields based on user choice.
+  $('input[type="radio"][name="going"]').click(function() {
+    if ($(this).val() == 'yes') {
+      $('input[name="name"]').fadeIn().rules("add", { required: true });
+      $('input[name="email"]').fadeIn().rules("add", { required: true, email: true });
+      $('input[name="phone"]').fadeIn().rules("add", { required: true });
+      $('select[name="plusone"]').fadeIn().rules("add", { required: true });
+      $('select[name="meal"]').fadeIn().rules("add", { required: true });
+    } else {
+      $('input[name="name"]').fadeIn().rules("add", { required: true });
+      $('input[name="email"]').fadeIn().rules("add", { required: true, email: true });
+      $('input[name="phone"]').fadeIn().rules("add", { required: true });
+      $('select[name="plusone"]').fadeOut().rules("remove");
+      $('select[name="meal"]').fadeOut().rules("remove");
+    }
+    $('input[type="submit"][name="rsvp-submit"]').fadeIn();
+    rebuildForm();
+  });
 
   // Avatar swap
   var avatarSetup = function() {
@@ -94,20 +189,6 @@ $(document).foundation();
     $(this).fadeOut(function() {
       $(this).html(quotes[quotePosition]).fadeIn()
     });
-  });
-
-  // Ensure textfields in a group properly overlap vertically.
-  $('.text-group input').each(function(index) {
-    if (index) {
-      $(this).css('top', '-' + index + 'px');
-    }
-  });
-
-  // Ensure textfields in a group properly overlap horizontally.
-  $('.radio-group label').each(function(index) {
-    if (index) {
-      $(this).css('left', '-' + index + 'px');
-    }
   });
 
   // Ensure radio group border changes when highlighted
@@ -165,104 +246,6 @@ $(document).foundation();
   $(window).on('resize orientationchange', Foundation.utils.throttle(function(e){
     avatarSetup();
     bridesmaidsSetup();
-    console.log('Resized');
   }, 300));
 
-  $('.curtains').curtain();
-
 }(jQuery));
-
-/*
-(function() {
-  var docElem = window.document.documentElement, didScroll, scrollPosition;
-
-  // trick to prevent scrolling when opening/closing button
-  function noScrollFn() {
-    window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
-    console.log("noScroll");
-  }
-
-  function noScroll() {
-    window.removeEventListener( 'scroll', scrollHandler );
-    window.addEventListener( 'scroll', noScrollFn );
-  }
-
-  function scrollFn() {
-    window.addEventListener( 'scroll', scrollHandler );
-  }
-
-  function canScroll() {
-    window.removeEventListener( 'scroll', noScrollFn );
-    scrollFn();
-  }
-
-  function scrollHandler() {
-    if( !didScroll ) {
-      didScroll = true;
-      setTimeout( function() { scrollPage(); }, 60 );
-    }
-    console.log("scrollHandler");
-  };
-
-  function scrollPage() {
-    scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
-    didScroll = false;
-  };
-
-  scrollFn();
-
-  var el = document.querySelector( '.morph-button' );
-
-  new UIMorphingButton( el, {
-    closeEl : '.icon-close',
-    onBeforeOpen : function() {
-      // don't allow to scroll
-      noScroll();
-    },
-    onAfterOpen : function() {
-      // can scroll again
-      canScroll();
-      // add class "noscroll" to body
-      classie.addClass( document.body, 'noscroll' );
-      // add scroll class to main el
-      classie.addClass( el, 'scroll' );
-    },
-    onBeforeClose : function() {
-      // remove class "noscroll" to body
-      classie.removeClass( document.body, 'noscroll' );
-      // remove scroll class from main el
-      classie.removeClass( el, 'scroll' );
-      // don't allow to scroll
-      noScroll();
-    },
-    onAfterClose : function() {
-      // can scroll again
-      canScroll();
-    }
-  } );
-})();
-
-
-// Angular JS Application
-(function() {
-  angular.module('weddingApp', ['ngCurtain']);
-})();
-
-
-*/
-//var weddingApp = angular.module('weddingApp', ['ngCurtain']);
-
-/*
-nameApp.controller('NameCtrl', function ($scope){
-  $scope.firstName = 'John';
-
-  $scope.$watch('lastName', function(newValue, oldValue){
-    console.log('new value is ' + newValue);
-  });
-
-  setTimeout(function(){
-    $scope.lastName = 'Smith';
-    $scope.$apply();
-  }, 1000);
-});
-*/

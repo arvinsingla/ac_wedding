@@ -13,6 +13,13 @@ textarea:focus {
   opacity: 0;
 }
 
+form#rsvp-form {
+  width: rem-calc(400px);
+  [disabled]:not([type="submit"]) {
+    opacity: 0.5;
+  }
+}
+
 input {
   @include element-text(inherit);
   min-width: rem-calc(400px);
@@ -121,5 +128,12 @@ select {
     &:hover {
       background-image: $arrow-down-peach;
     }
+  }
+  &.error {
+    border-color: red;
+    @include input-placeholder {
+      color: red;
+    }
+    z-index: 10;
   }
 }

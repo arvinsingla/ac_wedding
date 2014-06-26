@@ -1,5 +1,13 @@
 // Row Content
 
+body {
+  opacity: 0;
+  @include single-transition(opacity, 2s, false, 1s);
+  &.loaded {
+    opacity: 1;
+  }
+}
+
 .row {
   @include single-box-shadow($shadow-color, 0px, rem-calc(5px), rem-calc(15px), false, false);
   .row-content {
