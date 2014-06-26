@@ -121,11 +121,11 @@ scrollFn();
         data: {
           'key': '444nOhDtNECZLeNBUr-8Sg',
           'message': {
-            'from_email': 'arvin.singla@gmail.com',
+            'from_email': 'us@andrewandclaudia.com',
             'to': [
                 {
-                  'email': 'arvin.singla@gmail.com',
-                  'name': 'Arvin Singla'
+                  'email': 'us@andrewandclaudia.com',
+                  'name': 'Claudia & Andrew'
                 },
               ],
             'autotext': 'true',

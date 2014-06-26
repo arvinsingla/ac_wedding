@@ -105,5 +105,12 @@ input[type="submit"] {
   &.complete {
     background-color: $green-color;
     cursor: default;
+    &:hover {
+      border-color: $green-color;
+    }
+  }
+  &:hover {
+    background: $peach-color;
+    border-color: $peach-color;
   }
 }

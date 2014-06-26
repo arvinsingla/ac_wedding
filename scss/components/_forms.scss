@@ -32,6 +32,8 @@ input {
   padding: rem-calc(16px) rem-calc(30px);
   border: 1px solid $middle-grey-color;
   margin: 0;
+  -webkit-appearance: none;
+  border-radius: 0;
   @include single-transition(border-color, 0.4s, false, false);
   &:hover {
     border-color: $grey-color;

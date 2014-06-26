@@ -67,6 +67,16 @@
   }
 }
 
+@media #{$small-only} {
+  .modal {
+    p.intro {
+      display: none;
+    }
+    .intro-text {
+      padding-top: rem-calc(50px);
+    }
+  }
+}
 
 @media #{$medium-up} {
   .modal {
