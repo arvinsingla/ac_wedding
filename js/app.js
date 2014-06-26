@@ -45,10 +45,12 @@ $(document).foundation();
   });
 
   // Set height for registry columns
+  /*
   var leftHeight = $('.registry-left').outerHeight();
   console.log(leftHeight);
   $('.registry-right').css('height', leftHeight + 'px');
   $('.registry-left').css('height', leftHeight + 'px');
+  */
 
   // Avatar swap
   var avatarSetup = function() {

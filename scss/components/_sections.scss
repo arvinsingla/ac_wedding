@@ -1,6 +1,6 @@
 // Row Content
 
-ol > li {
+ol.curtains > li {
   @include single-box-shadow($shadow-color, 0px, rem-calc(5px), rem-calc(15px), false, false);
 }
 
@@ -15,13 +15,13 @@ ol > li {
   .row-footer {
     width: 100%;
     position: absolute;
-    bottom: 15%;
+    bottom: 20%;
   }
 }
 
 @media #{$large-up} {
   .row.content {
-    min-height: rem-calc(900px);
+    min-height: $min-page-height;
   }
 }
 
@@ -35,6 +35,14 @@ ol > li {
   }
   .date {
     padding-bottom: rem-calc(60px);
+  }
+  .scroll-down {
+    display: inline-block;
+    padding-right: 15px;
+    background-image: url(../icon/chevron-down.svg);
+    background-position: right center;
+    background-size: rem-calc(10px) rem-calc(10px);
+    background-repeat: no-repeat;
   }
 }
 
@@ -179,7 +187,7 @@ ol > li {
     }
   }
   .button {
-    margin-top: rem-calc(30px);
+    margin-top: rem-calc(20px);
     margin-bottom: rem-calc(70px);
   }
   .courtyard .button {
@@ -193,7 +201,7 @@ ol > li {
     .courtyard {
       text-align: left;
       p.hotel-details {
-        height: rem-calc(160px);
+        height: rem-calc(144px);
         margin-bottom: 0;
       }
     }
@@ -211,13 +219,14 @@ ol > li {
     padding-bottom: rem-calc(20px);
   }
   p.intro {
-    padding-bottom: rem-calc(30px);
+    padding-bottom: rem-calc(60px);
     max-width: rem-calc(880px);
+    margin: 0 auto;
   }
   .double-border {
     border: rem-calc(1px) solid $light-grey-color;
     position: relative;
-    padding: 5% 10%;
+    padding: rem-calc(50px) 10%;
     margin: 0 auto;
     text-align: left;
     &:before {
@@ -256,7 +265,8 @@ ol > li {
     position: relative;
   }
   .row-content {
-    padding: rem-calc(60px) rem-calc(20px);
+    padding-top: rem-calc(110px);
+    padding-bottom: rem-calc(70px);
   }
   .registry-left {
     background-color: $light-grey-color;
@@ -267,6 +277,8 @@ ol > li {
     }
     p {
       text-align: left;
+      padding-left: rem-calc(60px);
+      padding-right: rem-calc(60px);
     }
     .button {
       margin-top: rem-calc(30px);
@@ -290,7 +302,7 @@ ol > li {
     font-weight: bold;
     position: absolute;
     bottom: rem-calc(-15px);
-    right: 48%;
+    right: 49%;
     z-index: 99;
     text-align: center;
   }
@@ -299,22 +311,26 @@ ol > li {
 @media #{$medium-up} {
   .gifts-registry-content {
     padding: rem-calc(20px);
-    .row-content {
-      padding: rem-calc(60px);
-    }
   }
 }
 
 @media #{$large-up} {
   .gifts-registry-content {
+    .column {
+      display: table;
+      height: $min-page-height;
+    }
     .registry-separator {
       right: rem-calc(-15px);
       top: 46%;
     }
     .registry-left {
       padding-left: 20%;
+      display: table-cell;
+      vertical-align: middle;
     }
     .registry-right {
+      width: 100%;
       display: table-cell;
       vertical-align: middle;
     }
@@ -379,16 +395,27 @@ ol > li {
 .hear-from-you-content {
   padding: 10%;
   a {
+    display: block;
     color: $black-color;
     text-decoration: none;
+    font-size: $h4-font-size;
     border-bottom: 0;
+    text-transform: uppercase;
+    font-family: $secondary-font-family;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
     &:hover {
       color: $peach-color;
+    }
+    h4 {
+      &:hover {
+        color: $peach-color;
+      }
     }
   }
   .icon {
     margin-top: rem-calc(75px);
-    margin-bottom: rem-calc(20px);
+    margin-bottom: rem-calc(8px);
   }
 }
 
@@ -403,10 +430,14 @@ ol > li {
 @media #{$large-up} {
   .hear-from-you-content {
     h2 {
+      padding-top: rem-calc(200px);
       padding-bottom: rem-calc(20px);
     }
     .icon {
-      margin-top: rem-calc(85px);
+      margin-top: rem-calc(30px);
+    }
+    a {
+      font-size: $h4-font-size-large;
     }
   }
 }
@@ -418,7 +449,7 @@ ol > li {
       top: 30%;
     }
     .row-footer {
-      bottom: 30%;
+      bottom: 15%;
     }
   }
 }

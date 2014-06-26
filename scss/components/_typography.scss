@@ -20,6 +20,7 @@ h1 {
   font-weight: 600;
   letter-spacing: -0.045rem;
   padding: rem-calc(20px) 0;
+  font-size: 2.188rem;
 }
 
 h2 {
@@ -55,7 +56,13 @@ p {
 p.intro {
   font-family: $secondary-font-family;
   letter-spacing: 0;
-  font-size: 1.250em;
+  font-size: 1.125em;
+}
+
+@media #{$medium-up} {
+  p.intro {
+    font-size: 1.250em;
+  }
 }
 
 blockquote {
