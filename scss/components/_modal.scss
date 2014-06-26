@@ -13,6 +13,7 @@
   -webkit-transition: opacity 1s ease;
   transition: opacity 1s ease;
   position: fixed;
+  z-index: -1;
   &.open {
     opacity: 1;
     z-index: 1000;

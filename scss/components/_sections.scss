@@ -1,10 +1,7 @@
 // Row Content
 
-ol.curtains > li {
-  @include single-box-shadow($shadow-color, 0px, rem-calc(5px), rem-calc(15px), false, false);
-}
-
 .row {
+  @include single-box-shadow($shadow-color, 0px, rem-calc(5px), rem-calc(15px), false, false);
   .row-content {
     width: 100%;
     &.with-background {
@@ -358,6 +355,7 @@ ol.curtains > li {
   }
   .owl-carousel {
     .owl-item {
+      @include single-transition(opacity, 0.4s, false, false);
       opacity: 0.25;
       &.center {
         opacity: 1;

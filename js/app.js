@@ -131,7 +131,12 @@ $(document).foundation();
     if (matchMedia(Foundation.media_queries['large']).matches) {
       // Destroy carousel if present
       $("#bridesmaids-carousel").trigger('destroy');
-      // @todo This is where we do the sticky text.
+      $(".row-bridesmaids .row-content").stick_in_parent({
+        offset_top: 100
+      });
+      setTimeout(function(){
+        $(document.body).trigger("sticky_kit:recalc");
+      }, 1000);
     } else {
       // Remove sticky text.
       $(".row-bridesmaids .row-content").trigger("sticky_kit:detach");
