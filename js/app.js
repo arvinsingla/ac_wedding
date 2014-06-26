@@ -241,7 +241,7 @@ $(document).foundation();
     }
   }
 
-  if (matchMedia(Foundation.media_queries['small']).matches) {
+  if (!matchMedia(Foundation.media_queries['small']).matches && !matchMedia(Foundation.media_queries['medium']).matches) {
     $('.row.intro a.button-modal').html('<span>Howdy! RSVP here</span><span>We promise a great time!</span>');
   }
 
