@@ -71,8 +71,8 @@ img.avatar {
 // Image + Text overlays
 
 .wedding-party-person {
-  width: rem-calc(306px);
-  height: rem-calc(330px);
+  width: rem-calc(250px);
+  height: rem-calc(274px);
   position: relative;
   img {
     width: 100%;
@@ -80,8 +80,8 @@ img.avatar {
   .overlay {
     position: absolute;
     top: 0;
-    width: rem-calc(306px);
-    height: rem-calc(306px);
+    width: rem-calc(250px);
+    height: rem-calc(250px);
     margin: auto;
     background-color: rgba(0, 0, 0, 0.75);
     color: $light-grey-color;
@@ -111,6 +111,17 @@ img.avatar {
   }
   &:hover .text {
     top: 0;
+  }
+}
+
+@media #{$medium-up} {
+  .wedding-party-person {
+    width: rem-calc(306px);
+    height: rem-calc(330px);
+    .overlay {
+      width: rem-calc(306px);
+      height: rem-calc(306px);
+    }
   }
 }
 

@@ -4,6 +4,7 @@ body {
   .row {
     opacity: 0;
     @include single-transition(opacity, 1.5s, false, false);
+    overflow: hidden;
   }
   &.loaded {
     .row {
@@ -396,6 +397,9 @@ body {
         opacity: 1;
       }
     }
+  }
+  .owl-stage-outer {
+    overflow: visible;
   }
   .row-best-man {
     .row-images {

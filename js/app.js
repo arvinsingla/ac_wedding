@@ -255,7 +255,7 @@ scrollFn();
       });
       setTimeout(function(){
         $(document.body).trigger("sticky_kit:recalc");
-      }, 1000);
+      }, 1500);
     } else {
       // Remove sticky text.
       $(".row-bridesmaids .row-content").trigger("sticky_kit:detach");
