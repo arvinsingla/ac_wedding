@@ -241,14 +241,20 @@ $(document).foundation();
     }
   }
 
-  if (!matchMedia(Foundation.media_queries['small']).matches && !matchMedia(Foundation.media_queries['medium']).matches) {
-    $('.row.intro a.button-modal').html('<span>Howdy! RSVP here</span><span>We promise a great time!</span>');
+  var changeButtonText = function() {
+    if (!matchMedia(Foundation.media_queries['large']).matches && !matchMedia(Foundation.media_queries['medium']).matches) {
+      $('.row.intro a.button-modal').html('<span>Howdy! RSVP here</span><span>We promise a great time!</span>');
+    } else {
+      $('.row.intro a.button-modal').html('<span>Howdy! Go ahead and RSVP here</span><span>We promise you an awesome time!</span>');
+    }
   }
+  changeButtonText();
 
   // Throttled resize function
   $(window).on('resize orientationchange', Foundation.utils.throttle(function(e){
     avatarSetup();
     bridesmaidsSetup();
+    changeButtonText();
   }, 300));
 
   // Add the loaded class when the page has fully loaded.
