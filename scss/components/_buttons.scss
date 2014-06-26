@@ -22,7 +22,7 @@
     }
   }
   &.wide {
-    width: rem-calc(360px);
+    width: rem-calc(290px);
   }
   // Secondary Button Style
   &.secondary {
@@ -87,12 +87,23 @@
   }
 }
 
+@media #{$medium-up} {
+  .button {
+    &.wide {
+      width: rem-calc(360px);
+    }
+  }
+}
+
+
 input[type="submit"] {
   @include border-radius($global-radius);
   background-color: $charcoal-color;
   color: $white-color;
+  cursor: pointer;
   @include single-transition(background-color, 1s, false, false);
   &.complete {
     background-color: $green-color;
+    cursor: default;
   }
 }

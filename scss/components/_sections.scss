@@ -20,6 +20,12 @@ body {
   .row-footer {
     width: 100%;
     position: absolute;
+    bottom: 10%;
+  }
+}
+
+@media #{$medium-up} {
+  .row.footer {
     bottom: 20%;
   }
 }

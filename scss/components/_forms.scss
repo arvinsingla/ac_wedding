@@ -14,15 +14,21 @@ textarea:focus {
 }
 
 form#rsvp-form {
-  width: rem-calc(400px);
+  width: rem-calc(300px);
   [disabled]:not([type="submit"]) {
     opacity: 0.5;
   }
 }
 
+@media #{$medium-up} {
+  form#rsvp-form {
+    width: rem-calc(400px);
+  }
+}
+
 input {
   @include element-text(inherit);
-  min-width: rem-calc(400px);
+  min-width: rem-calc(300px);
   padding: rem-calc(16px) rem-calc(30px);
   border: 1px solid $middle-grey-color;
   margin: 0;
@@ -43,6 +49,13 @@ input {
     z-index: 10;
   }
 }
+
+@media #{$medium-up} {
+  input {
+    min-width: rem-calc(400px);
+  }
+}
+
 
 .text-group {
   input {
@@ -106,7 +119,7 @@ input {
 }
 
 select {
-  width: rem-calc(400px);
+  width: rem-calc(300px);
   padding: rem-calc(16px) rem-calc(30px);
   border: 1px solid $middle-grey-color;
   background-color: #fff;
@@ -135,5 +148,11 @@ select {
       color: red;
     }
     z-index: 10;
+  }
+}
+
+@media #{$medium-up} {
+  select {
+    width: rem-calc(400px);
   }
 }
