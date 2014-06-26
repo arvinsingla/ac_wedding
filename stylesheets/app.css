@@ -4087,9 +4087,10 @@ body.loaded .loading {
 /* line 1, ../scss/components/_modal.scss */
 .locked {
   overflow: hidden;
+  position: fixed;
 }
 
-/* line 5, ../scss/components/_modal.scss */
+/* line 6, ../scss/components/_modal.scss */
 .modal {
   opacity: 0;
   top: 0 !important;
@@ -4103,19 +4104,20 @@ body.loaded .loading {
   position: fixed;
   z-index: -1;
 }
-/* line 17, ../scss/components/_modal.scss */
+/* line 18, ../scss/components/_modal.scss */
 .modal.open {
   opacity: 1;
   z-index: 1000;
   overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
-/* line 21, ../scss/components/_modal.scss */
+/* line 23, ../scss/components/_modal.scss */
 .modal.open > div {
   visibility: visible;
   opacity: 1;
   top: 0;
 }
-/* line 27, ../scss/components/_modal.scss */
+/* line 29, ../scss/components/_modal.scss */
 .modal > div {
   visibility: hidden;
   opacity: 0;
@@ -4127,20 +4129,20 @@ body.loaded .loading {
   /* Safari and Chrome */
   transition-delay: 0.5s;
 }
-/* line 37, ../scss/components/_modal.scss */
+/* line 39, ../scss/components/_modal.scss */
 .modal form {
   display: inline-block;
   margin: 0 auto;
 }
-/* line 41, ../scss/components/_modal.scss */
+/* line 43, ../scss/components/_modal.scss */
 .modal .text-group {
   text-align: left;
 }
-/* line 44, ../scss/components/_modal.scss */
+/* line 46, ../scss/components/_modal.scss */
 .modal .form-group {
   margin: 0.9375rem 0;
 }
-/* line 47, ../scss/components/_modal.scss */
+/* line 49, ../scss/components/_modal.scss */
 .modal .icon.close {
   position: absolute;
   top: 1.25rem;
@@ -4150,12 +4152,12 @@ body.loaded .loading {
   background-size: 1.875rem 1.875rem;
   cursor: pointer;
 }
-/* line 56, ../scss/components/_modal.scss */
+/* line 58, ../scss/components/_modal.scss */
 .modal .intro-text {
   padding-top: 6.25rem;
 }
 
-/* line 61, ../scss/components/_modal.scss */
+/* line 63, ../scss/components/_modal.scss */
 .button-modal {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -4163,24 +4165,24 @@ body.loaded .loading {
   transition: all 0.5s;
   opacity: 1;
 }
-/* line 64, ../scss/components/_modal.scss */
+/* line 66, ../scss/components/_modal.scss */
 .button-modal.open {
   opacity: 0;
   z-index: 0;
 }
 
 @media only screen and (max-width: 40em) {
-  /* line 72, ../scss/components/_modal.scss */
+  /* line 74, ../scss/components/_modal.scss */
   .modal p.intro {
     display: none;
   }
-  /* line 75, ../scss/components/_modal.scss */
+  /* line 77, ../scss/components/_modal.scss */
   .modal .intro-text {
     padding-top: 3.125rem;
   }
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 83, ../scss/components/_modal.scss */
+  /* line 85, ../scss/components/_modal.scss */
   .modal .icon.close {
     top: 3.125rem;
     right: 3.125rem;

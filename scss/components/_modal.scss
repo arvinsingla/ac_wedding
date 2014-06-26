@@ -1,5 +1,6 @@
 .locked {
   overflow: hidden;
+  position: fixed;
 }
 
 .modal {
@@ -18,6 +19,7 @@
     opacity: 1;
     z-index: 1000;
     overflow: scroll;
+    -webkit-overflow-scrolling : touch;
     > div {
       visibility: visible;
       opacity: 1;
