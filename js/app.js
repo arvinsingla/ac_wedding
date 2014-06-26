@@ -24,14 +24,9 @@ $(document).foundation();
     e.preventDefault();
     var pos = $(this).offset();
     var $modalContent = $('.modal');
-    $modalContent.css('left', pos.left - $(window).scrollLeft());
-    $modalContent.css('top', pos.top - $(window).scrollTop());
     $(this).toggleClass('open');
-    // Make sure this fires after half a second.
-    setTimeout(function(){
-      $('body').toggleClass('locked');
-      $modalContent.toggleClass('open');
-    }, 350);
+    $('body').toggleClass('locked');
+    $modalContent.toggleClass('open');
   });
 
   // Modal close (X)

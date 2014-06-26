@@ -3952,61 +3952,54 @@ ol.curtains > li {
 /* line 5, ../scss/components/_modal.scss */
 .modal {
   opacity: 0;
-  overflow: hidden;
-  background-color: white;
-  -webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-  transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-  position: fixed;
-  width: 22.5rem;
-  height: 3.125rem;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  border-radius: 5px;
-}
-/* line 15, ../scss/components/_modal.scss */
-.modal.open {
   top: 0 !important;
   left: 0 !important;
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  background-color: white;
+  -webkit-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+  position: fixed;
+}
+/* line 16, ../scss/components/_modal.scss */
+.modal.open {
   opacity: 1;
   z-index: 1000;
   overflow: scroll;
-  -webkit-transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
-  transition: width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s, margin 0.4s 0.1s;
 }
-/* line 25, ../scss/components/_modal.scss */
+/* line 20, ../scss/components/_modal.scss */
 .modal.open > div {
   visibility: visible;
-  height: auto;
   opacity: 1;
-  -webkit-transition: opacity 0.3s 0.5s;
-  transition: opacity 0.3s 0.5s;
+  top: 0;
 }
-/* line 33, ../scss/components/_modal.scss */
+/* line 26, ../scss/components/_modal.scss */
 .modal > div {
   visibility: hidden;
-  height: 0;
   opacity: 0;
-  -webkit-transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
-  transition: opacity 0.1s, visibility 0s 0.1s, height 0s 0.1s;
+  position: relative;
+  top: -3.125rem;
+  -webkit-transition: opacity 0.5s ease, top 1s ease;
+  transition: opacity 0.5s ease, top 1s ease;
+  -webkit-transition-delay: 0.5s;
+  /* Safari and Chrome */
+  transition-delay: 0.5s;
 }
-/* line 40, ../scss/components/_modal.scss */
+/* line 36, ../scss/components/_modal.scss */
 .modal form {
   display: inline-block;
   margin: 0 auto;
 }
-/* line 44, ../scss/components/_modal.scss */
+/* line 40, ../scss/components/_modal.scss */
 .modal .text-group {
   text-align: left;
 }
-/* line 47, ../scss/components/_modal.scss */
+/* line 43, ../scss/components/_modal.scss */
 .modal .form-group {
   margin: 0.9375rem 0;
 }
-/* line 50, ../scss/components/_modal.scss */
+/* line 46, ../scss/components/_modal.scss */
 .modal .icon.close {
   position: absolute;
   top: 1.25rem;
@@ -4016,12 +4009,12 @@ ol.curtains > li {
   background-size: 1.875rem 1.875rem;
   cursor: pointer;
 }
-/* line 59, ../scss/components/_modal.scss */
+/* line 55, ../scss/components/_modal.scss */
 .modal .intro-text {
   padding-top: 6.25rem;
 }
 
-/* line 64, ../scss/components/_modal.scss */
+/* line 60, ../scss/components/_modal.scss */
 .button-modal {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -4029,14 +4022,14 @@ ol.curtains > li {
   transition: all 0.5s;
   opacity: 1;
 }
-/* line 67, ../scss/components/_modal.scss */
+/* line 63, ../scss/components/_modal.scss */
 .button-modal.open {
   opacity: 0;
   z-index: 0;
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 76, ../scss/components/_modal.scss */
+  /* line 72, ../scss/components/_modal.scss */
   .modal .icon.close {
     top: 3.125rem;
     right: 3.125rem;
