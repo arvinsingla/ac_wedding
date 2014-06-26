@@ -5,11 +5,6 @@ $(document).foundation();
 // jQuery specific functionality for the front end.
 (function ($) {
 
-  // Add the loaded class when the page has fully loaded.
-  $(window).bind("load", function() {
-    $('body').addClass('loaded');
-  });
-
   // Open external links in a new window.
   $("a[href^='http://']").attr("target","_blank");
 
@@ -243,12 +238,17 @@ $(document).foundation();
       });
     }
   }
-  bridesmaidsSetup();
 
   // Throttled resize function
   $(window).on('resize orientationchange', Foundation.utils.throttle(function(e){
     avatarSetup();
     bridesmaidsSetup();
   }, 300));
+
+  // Add the loaded class when the page has fully loaded.
+  $(window).bind("load", function() {
+    $('body').addClass('loaded');
+    bridesmaidsSetup();
+  });
 
 }(jQuery));
