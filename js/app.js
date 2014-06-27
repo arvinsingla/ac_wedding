@@ -5,6 +5,8 @@ $(document).foundation();
 // jQuery specific functionality for the front end.
 (function ($) {
 
+  var position;
+
   // Open external links in a new window.
   $("a[href^='http']").attr("target","_blank");
 
@@ -13,6 +15,8 @@ $(document).foundation();
   // Modal open (button)
   $('a.button-modal').click(function(e) {
     e.preventDefault();
+    position = $(window).scrollTop();
+    console.log(position);
     var $modalContent = $('.modal');
     $modalContent.css('z-index', 1000);
     $(this).toggleClass('open');
@@ -25,12 +29,13 @@ $(document).foundation();
 
   // Modal close (X)
   $('.close').click(function(e) {
+    $('.row').css('display', 'block');
+    $('body').scrollTop(position);
     var $button = $('a.button-modal.open');
     var $modalContent = $(this).parent();
     $button.toggleClass('open');
     $modalContent.toggleClass('open');
     $('body').toggleClass('locked');
-    $('.row').css('display', 'block');
     setTimeout(function(){
       $modalContent.css('z-index', -1);
     }, 1000);
