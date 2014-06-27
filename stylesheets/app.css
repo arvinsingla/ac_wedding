@@ -4110,36 +4110,31 @@ body.loaded .loading {
 }
 /* line 20, ../scss/components/_modal.scss */
 .modal.open > div {
-  visibility: visible;
   opacity: 1;
   top: 0;
 }
-/* line 26, ../scss/components/_modal.scss */
+/* line 25, ../scss/components/_modal.scss */
 .modal > div {
-  visibility: hidden;
   opacity: 0;
   position: relative;
   top: -3.125rem;
-  -webkit-transition-delay: 1s;
-  /* Safari */
-  transition-delay: 1s;
   -webkit-transition: opacity 1s ease, top 1s ease;
   transition: opacity 1s ease, top 1s ease;
 }
-/* line 36, ../scss/components/_modal.scss */
+/* line 32, ../scss/components/_modal.scss */
 .modal form {
   display: inline-block;
   margin: 0 auto;
 }
-/* line 40, ../scss/components/_modal.scss */
+/* line 36, ../scss/components/_modal.scss */
 .modal .text-group {
   text-align: left;
 }
-/* line 43, ../scss/components/_modal.scss */
+/* line 39, ../scss/components/_modal.scss */
 .modal .form-group {
   margin: 0.9375rem 0;
 }
-/* line 46, ../scss/components/_modal.scss */
+/* line 42, ../scss/components/_modal.scss */
 .modal .icon.close {
   position: absolute;
   top: 1.25rem;
@@ -4149,12 +4144,12 @@ body.loaded .loading {
   background-size: 1.875rem 1.875rem;
   cursor: pointer;
 }
-/* line 55, ../scss/components/_modal.scss */
+/* line 51, ../scss/components/_modal.scss */
 .modal .intro-text {
   padding-top: 6.25rem;
 }
 
-/* line 60, ../scss/components/_modal.scss */
+/* line 56, ../scss/components/_modal.scss */
 .button-modal {
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -4162,24 +4157,24 @@ body.loaded .loading {
   transition: all 0.5s;
   opacity: 1;
 }
-/* line 63, ../scss/components/_modal.scss */
+/* line 59, ../scss/components/_modal.scss */
 .button-modal.open {
   opacity: 0;
   z-index: 0;
 }
 
 @media only screen and (max-width: 40em) {
-  /* line 73, ../scss/components/_modal.scss */
+  /* line 69, ../scss/components/_modal.scss */
   .modal p.intro {
     display: none;
   }
-  /* line 76, ../scss/components/_modal.scss */
+  /* line 72, ../scss/components/_modal.scss */
   .modal .intro-text {
     padding-top: 3.125rem;
   }
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 84, ../scss/components/_modal.scss */
+  /* line 80, ../scss/components/_modal.scss */
   .modal .icon.close {
     top: 3.125rem;
     right: 3.125rem;

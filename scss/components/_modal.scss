@@ -18,18 +18,14 @@
     overflow: scroll;
     -webkit-overflow-scrolling: touch;
     > div {
-      visibility: visible;
       opacity: 1;
       top: 0;
     }
   }
   > div {
-    visibility: hidden;
     opacity: 0;
     position: relative;
     top: rem-calc(-50px);
-    -webkit-transition-delay: 1s; /* Safari */
-    transition-delay: 1s;
     -webkit-transition: opacity 1s ease, top 1s ease;
     transition: opacity 1s ease, top 1s ease;
   }

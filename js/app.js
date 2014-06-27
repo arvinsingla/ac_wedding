@@ -6,7 +6,7 @@ $(document).foundation();
 (function ($) {
 
   // Open external links in a new window.
-  $("a[href^='http://']").attr("target","_blank");
+  $("a[href^='http']").attr("target","_blank");
 
   $('.modal').css('z-index', -1);
 
@@ -18,6 +18,9 @@ $(document).foundation();
     $(this).toggleClass('open');
     $('body').toggleClass('locked');
     $modalContent.toggleClass('open');
+    setTimeout(function(){
+      $('.row').css('display', 'none');
+    }, 1000);
   });
 
   // Modal close (X)
@@ -27,6 +30,7 @@ $(document).foundation();
     $button.toggleClass('open');
     $modalContent.toggleClass('open');
     $('body').toggleClass('locked');
+    $('.row').css('display', 'block');
     setTimeout(function(){
       $modalContent.css('z-index', -1);
     }, 1000);
@@ -174,9 +178,7 @@ $(document).foundation();
 
   // Custom quotes
   var quotes = [
-    '“Omg you gaiz are like so cute. I wish I could own a Way-Way and be as amazing as you!”',
-    '"This is a test"',
-    '"This is another test"'
+    '“Omg you gaiz are like so cute. I wish I could own a Way-Way and be as amazing as you!”'
   ];
   // randomize the order
   quotes.sort(function() { return 0.5 - Math.random() });
