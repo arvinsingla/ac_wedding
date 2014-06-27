@@ -178,7 +178,7 @@ $(document).foundation();
 
   // Custom quotes
   var quotes = [
-    '“Omg you gaiz are like so cute. I wish I could own a Way-Way and be as amazing as you!”'
+    'Wine, Cheese and Chocolate outings.'
   ];
   // randomize the order
   quotes.sort(function() { return 0.5 - Math.random() });
