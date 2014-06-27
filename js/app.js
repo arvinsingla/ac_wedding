@@ -264,6 +264,7 @@ $(document).foundation();
   // Add the loaded class when the page has fully loaded.
   $(window).bind("load", function() {
     $('body').addClass('loaded');
+    FastClick.attach(document.body);
     bridesmaidsSetup();
   });
 
