@@ -183,7 +183,8 @@ $(document).foundation();
 
   // Custom quotes
   var quotes = [
-    'Wine, Cheese and Chocolate outings.'
+    'Wine, Cheese and Chocolate outings.',
+    'Attending orchestra, jazz and bluegrass concerts'
   ];
   // randomize the order
   quotes.sort(function() { return 0.5 - Math.random() });
