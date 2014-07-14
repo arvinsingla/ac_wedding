@@ -16,7 +16,6 @@ $(document).foundation();
   $('a.button-modal').click(function(e) {
     e.preventDefault();
     position = $(window).scrollTop();
-    console.log(position);
     var $modalContent = $('.modal');
     $modalContent.css('z-index', 1000);
     $(this).toggleClass('open');

@@ -1,0 +1,22 @@
+a.right-off-canvas-toggle {
+  position: fixed;
+  right: rem-calc(40px);
+  top: rem-calc(40px);
+  display: block;
+  width: rem-calc(32px);
+  height: rem-calc(32px);
+  background-image: url('../icon/ac-icon-menu.svg');
+  background-size: rem-calc(32px) rem-calc(32px);
+  background-repeat: no-repeat;
+  background-position: top left;
+  font-size: rem-calc(11px);
+  text-transform: uppercase;
+  padding-top: rem-calc(40px);
+  z-index: 999;
+  border: none;
+  font-family: $secondary-font-family;
+  color: $dark-grey-color;
+  &:hover {
+    color: $dark-grey-color;
+  }
+}

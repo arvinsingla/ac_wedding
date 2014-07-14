@@ -1,13 +1,13 @@
 // Row Content
 
 body {
-  .row {
+  .off-canvas-wrap {
     opacity: 0;
     @include single-transition(opacity, 1.5s, false, false);
     overflow: hidden;
   }
   &.loaded {
-    .row {
+    .off-canvas-wrap {
       opacity: 1;
     }
     .loading {
