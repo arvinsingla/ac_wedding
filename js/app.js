@@ -284,6 +284,19 @@ $(document).foundation();
     $('body').toggleClass('open').toggleClass('locked');
   });
 
+  $(".side-menu a").click(function(e) {
+    e.preventDefault();
+    var positionToScroll = $('div' + $(this).attr('href')).position();
+    console.log(positionToScroll);
+    $('body').toggleClass('open').toggleClass('locked');
+
+    setTimeout(function(){
+      $('html,body').animate({
+        scrollTop: positionToScroll.top
+      }, 1000);
+    }, 500);
+  });
+
   // Throttled resize function
   $(window).on('resize orientationchange', Foundation.utils.throttle(function(e){
     avatarSetup();
