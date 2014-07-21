@@ -1,7 +1,7 @@
 a.menu-toggle {
   position: fixed;
-  right: rem-calc(40px);
-  top: rem-calc(40px);
+  right: rem-calc(20px);
+  top: rem-calc(20px);
   display: block;
   width: rem-calc(32px);
   height: rem-calc(32px);
@@ -21,8 +21,9 @@ a.menu-toggle {
   }
 }
 
-body.open {
+@media #{$large-up} {
   a.menu-toggle {
-    right: rem-calc(290px);
+    right: rem-calc(40px);
+    top: rem-calc(40px);
   }
 }

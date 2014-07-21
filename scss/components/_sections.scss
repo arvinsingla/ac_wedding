@@ -16,23 +16,24 @@ body {
       opacity: 0;
       z-index: -1;
     }
-    .side-menu {
-      display: block;
-    }
   }
   &.open {
     .side-menu {
       right: 0;
+      opacity: 1;
     }
     .full-content-container {
-      right: 250px;
+      right: 260px;
     }
     .menu-content-overlay {
-      width: 100%;
-      height: 100%;
-      z-index: 1002;
-      background: rgba(0,0,0,0.2);
+      z-index: 998;
       cursor: pointer;
+      opacity: 1;
+    }
+    a.menu-toggle {
+      right: rem-calc(280px);
+      background-image: url('../icon/ac-icon-close.svg');
+      background-size: rem-calc(32px) rem-calc(32px);
     }
   }
 }
@@ -40,10 +41,61 @@ body {
 // Side Menu
 .side-menu {
   position: fixed;
-  right: rem-calc(-150px);
-  width: rem-calc(250px);
-  @include single-transition(right, 0.7s, false, false);
-  display: none;
+  right: rem-calc(-130px);
+  width: rem-calc(260px);
+  @include transition(right 0.7s, opacity 0.5s);
+  opacity: 0;
+  padding: rem-calc(35px);
+  .logo {
+    margin-bottom: rem-calc(45px);
+  }
+  p {
+    line-height: 140%;
+    text-transform: uppercase;
+  }
+  .separator {
+    width: rem-calc(70px);
+    height: rem-calc(1px);
+    margin: rem-calc(45px) 0;
+    background: $middle-grey-color;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style: none;
+    text-transform: uppercase;
+    font-family: $secondary-font-family;
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+    height: 1.2rem;
+    a {
+      text-decoration: none;
+      color: $grey-color;
+      border: none;
+      font-weight: 500;
+      &:hover {
+        color: $dark-grey-color;
+      }
+      &.active {
+        font-weight: 700;
+        color: $black-color;
+      }
+    }
+  }
+  a.button {
+    min-width: 100%;
+    margin-top: rem-calc(45px);
+  }
+}
+
+@media #{$large-up} {
+  .side-menu {
+    a.button {
+      margin-top: 0;
+    }
+  }
 }
 
 // Content overlay when side menu is active
@@ -51,8 +103,28 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  width: 0;
-  height: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: rgba(255, 200, 160, 0.9);
+  @include transition(opacity 1s, z-index 1s);
+}
+
+@media #{$large-up} {
+  .side-menu {
+    width: rem-calc(340px);
+    right: rem-calc(-170px);
+    padding: rem-calc(35px) rem-calc(70px);
+  }
+  body.open {
+    .full-content-container {
+      right: rem-calc(340px);
+    }
+    a.menu-toggle {
+      right: rem-calc(380px);
+    }
+  }
 }
 
 

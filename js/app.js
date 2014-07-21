@@ -6,6 +6,7 @@ $(document).foundation();
 (function ($) {
 
   var position;
+  var contentSections = {};
 
   // Open external links in a new window.
   $("a[href^='http']").attr("target","_blank");
@@ -20,7 +21,7 @@ $(document).foundation();
     var $modalContent = $('div.modal-' + modalType);
     $modalContent.css('z-index', 1000);
     $(this).toggleClass('open');
-    $('body').toggleClass('locked');
+    $('body').toggleClass('locked').removeClass('open');
     $modalContent.toggleClass('open');
     setTimeout(function(){
       $('.row').css('display', 'none');
@@ -274,20 +275,38 @@ $(document).foundation();
   }
   changeButtonText();
 
-  // Open/Close the side menu.
+  /**
+   * Side menu functionality
+   */
+
+  // Open the side menu when the menu button is clicked.
   $('a.menu-toggle').click(function(e) {
     e.preventDefault();
+    var pos = $(window).scrollTop();
+    var _height  = $(window).height();
+    var smallestPos = 1000000;
+    var currentSection = '';
     $('body').toggleClass('open').toggleClass('locked');
+    // Set the active location item in the menu.
+    $.each(contentSections, function(index, value) {
+      if (value <= pos && (pos - value) <= smallestPos){
+        smallestPos = (pos - value);
+        currentSection = index;
+      }
+    });
+    $('.side-menu a').removeClass('active');
+    $('.side-menu a[href="#' + currentSection + '"]').addClass('active');
   });
 
+  // Close the side menu when the main content area is clicked.
   $('.menu-content-overlay').click(function(e) {
-    $('body').toggleClass('open').toggleClass('locked');
+    $('body').removeClass('open').removeClass('locked');
   });
 
+  // Scroll the content area when a menu item is clicked.
   $(".side-menu a").click(function(e) {
     e.preventDefault();
     var positionToScroll = $('div' + $(this).attr('href')).position();
-    console.log(positionToScroll);
     $('body').toggleClass('open').toggleClass('locked');
 
     setTimeout(function(){
@@ -297,11 +316,18 @@ $(document).foundation();
     }, 500);
   });
 
+  var rebuildSectionLocations = function() {
+    $('.row.content').each(function(value) {
+      contentSections[$(this).attr('id')] = $(this).offset().top - 50;
+    });
+  }
+
   // Throttled resize function
   $(window).on('resize orientationchange', Foundation.utils.throttle(function(e){
     avatarSetup();
     bridesmaidsSetup();
     changeButtonText();
+    rebuildSectionLocations();
   }, 300));
 
   // Add the loaded class when the page has fully loaded.
@@ -309,6 +335,7 @@ $(document).foundation();
     $('body').addClass('loaded');
     FastClick.attach(document.body);
     bridesmaidsSetup();
+    rebuildSectionLocations();
   });
 
 }(jQuery));
