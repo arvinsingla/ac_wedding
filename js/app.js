@@ -16,7 +16,8 @@ $(document).foundation();
   $('a.button-modal').click(function(e) {
     e.preventDefault();
     position = $(window).scrollTop();
-    var $modalContent = $('.modal');
+    var modalType = $(this).attr('data-modal');
+    var $modalContent = $('div.modal-' + modalType);
     $modalContent.css('z-index', 1000);
     $(this).toggleClass('open');
     $('body').toggleClass('locked');
@@ -188,15 +189,29 @@ $(document).foundation();
   // randomize the order
   quotes.sort(function() { return 0.5 - Math.random() });
   var quotePosition = 0;
-  $('.about-us-content blockquote').html(quotes[quotePosition]).click(function() {
-    if (quotePosition == ((quotes.length) - 1)) {
+  var $quoteContainer = $('.about-us-content .quotes-container');
+  // Initial setup of quotes
+  $.each(quotes, function(index, value) {
+    var showHide = index === 0 ? 'show' : 'hide';
+    $quoteContainer.append('<blockquote class="' + showHide + '" data-position="' + index + '">' + value + '</blockquote>');
+  });
+  // Set the inital height of the quote container
+  $quoteContainer.height($('.quotes-container blockquote').first().height());
+  // Click handler for quotes.
+  $('.about-us-content .quotes-container blockquote').click(function() {
+    // Set the appropriate quotePosition index in the array
+    if ($(this).attr('data-position') == ((quotes.length) - 1)) {
       quotePosition = 0;
     } else {
       quotePosition++;
     }
-    // Fade out the text, update it and fade it back in.
+    // Fetch the next quote
+    var $nextQuote = $quoteContainer.find('[data-position=' + quotePosition + ']');
+    // Set the height of our quote container (animated via CSS)
+    $quoteContainer.height($nextQuote.height());
+    // Fade out the old quote, and fade the new one.
     $(this).fadeOut(function() {
-      $(this).html(quotes[quotePosition]).fadeIn()
+      $nextQuote.fadeIn()
     });
   });
 

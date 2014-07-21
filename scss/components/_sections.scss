@@ -1,13 +1,13 @@
 // Row Content
 
 body {
-  .off-canvas-wrap {
+  .row {
     opacity: 0;
     @include single-transition(opacity, 1.5s, false, false);
     overflow: hidden;
   }
   &.loaded {
-    .off-canvas-wrap {
+    .row {
       opacity: 1;
     }
     .loading {
@@ -109,6 +109,16 @@ body {
   }
 }
 
+.quotes-container {
+  @include single-transition(height, 1s, false, false);
+}
+
+@media #{$small-only} {
+  .about-us-content {
+    padding: 15% 10%;
+  }
+}
+
 @media #{$medium-only} {
   .about-us-content {
     .avatar {
@@ -175,6 +185,12 @@ body {
   }
 }
 
+@media #{$small-only} {
+  .wedding-details-content {
+    padding: 15% 10%;
+  }
+}
+
 @media #{$medium-only} {
   .ceremony,
   .reception,
@@ -228,6 +244,12 @@ body {
   }
 }
 
+@media #{$small-only} {
+  .lodging-content {
+    padding: 15% 10%;
+  }
+}
+
 @media #{$large-up} {
   .lodging-content {
     .gunter,
@@ -277,6 +299,12 @@ body {
       color: $peach-color;
       padding: rem-calc(15px) 0;
     }
+  }
+}
+
+@media #{$small-only} {
+  .in-between-content {
+    padding: 15% 10%;
   }
 }
 
@@ -411,6 +439,12 @@ body {
   }
 }
 
+@media #{$small-only} {
+  .wedding-party {
+    padding: 15% 10%;
+  }
+}
+
 @media #{$large-up} {
   .wedding-party {
     .row-content {
@@ -453,6 +487,12 @@ body {
   .icon {
     margin-top: rem-calc(75px);
     margin-bottom: rem-calc(8px);
+  }
+}
+
+@media #{$small-only} {
+  .hear-from-you-content {
+    padding: 15% 10%;
   }
 }
 
