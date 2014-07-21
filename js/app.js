@@ -274,6 +274,16 @@ $(document).foundation();
   }
   changeButtonText();
 
+  // Open/Close the side menu.
+  $('a.menu-toggle').click(function(e) {
+    e.preventDefault();
+    $('body').toggleClass('open').toggleClass('locked');
+  });
+
+  $('.menu-content-overlay').click(function(e) {
+    $('body').toggleClass('open').toggleClass('locked');
+  });
+
   // Throttled resize function
   $(window).on('resize orientationchange', Foundation.utils.throttle(function(e){
     avatarSetup();

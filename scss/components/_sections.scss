@@ -1,21 +1,60 @@
 // Row Content
 
 body {
-  .row {
+  .full-content-container {
     opacity: 0;
-    @include single-transition(opacity, 1.5s, false, false);
-    overflow: hidden;
+    @include transition(right 0.5s, opacity 1.5s ease);
+    position: relative;
+    right: 0;
+    background: $white-color;
   }
   &.loaded {
-    .row {
+    .full-content-container {
       opacity: 1;
     }
     .loading {
       opacity: 0;
       z-index: -1;
     }
+    .side-menu {
+      display: block;
+    }
+  }
+  &.open {
+    .side-menu {
+      right: 0;
+    }
+    .full-content-container {
+      right: 250px;
+    }
+    .menu-content-overlay {
+      width: 100%;
+      height: 100%;
+      z-index: 1002;
+      background: rgba(0,0,0,0.2);
+      cursor: pointer;
+    }
   }
 }
+
+// Side Menu
+.side-menu {
+  position: fixed;
+  right: rem-calc(-150px);
+  width: rem-calc(250px);
+  @include single-transition(right, 0.7s, false, false);
+  display: none;
+}
+
+// Content overlay when side menu is active
+.menu-content-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+}
+
 
 .row {
   @include single-box-shadow($shadow-color, 0px, rem-calc(5px), rem-calc(15px), false, false);

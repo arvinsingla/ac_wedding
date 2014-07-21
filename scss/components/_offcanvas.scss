@@ -1,4 +1,4 @@
-a.right-off-canvas-toggle {
+a.menu-toggle {
   position: fixed;
   right: rem-calc(40px);
   top: rem-calc(40px);
@@ -18,5 +18,11 @@ a.right-off-canvas-toggle {
   color: $dark-grey-color;
   &:hover {
     color: $dark-grey-color;
+  }
+}
+
+body.open {
+  a.menu-toggle {
+    right: rem-calc(290px);
   }
 }
