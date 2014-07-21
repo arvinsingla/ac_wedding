@@ -7,6 +7,7 @@ $(document).foundation();
 
   var position;
   var contentSections = {};
+  var _height  = $(window).height();
 
   // Open external links in a new window.
   $("a[href^='http']").attr("target","_blank");
@@ -283,7 +284,6 @@ $(document).foundation();
   $('a.menu-toggle').click(function(e) {
     e.preventDefault();
     var pos = $(window).scrollTop();
-    var _height  = $(window).height();
     var smallestPos = 1000000;
     var currentSection = '';
     $('body').toggleClass('open').toggleClass('locked');
@@ -320,14 +320,20 @@ $(document).foundation();
     $('.row.content').each(function(value) {
       contentSections[$(this).attr('id')] = $(this).offset().top - 50;
     });
-  }
+  };
+
+  var resizeMenuContent = function() {
+    $('div.side-menu').height(_height);
+  };
 
   // Throttled resize function
   $(window).on('resize orientationchange', Foundation.utils.throttle(function(e){
+    _height  = $(window).height();
     avatarSetup();
     bridesmaidsSetup();
     changeButtonText();
     rebuildSectionLocations();
+    resizeMenuContent();
   }, 300));
 
   // Add the loaded class when the page has fully loaded.
@@ -336,6 +342,7 @@ $(document).foundation();
     FastClick.attach(document.body);
     bridesmaidsSetup();
     rebuildSectionLocations();
+    resizeMenuContent();
   });
 
 }(jQuery));

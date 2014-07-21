@@ -46,6 +46,7 @@ body {
   @include transition(right 0.7s, opacity 0.5s);
   opacity: 0;
   padding: rem-calc(35px);
+  overflow: scroll;
   .logo {
     margin-bottom: rem-calc(45px);
   }
@@ -553,6 +554,7 @@ body {
 @media #{$small-only} {
   .wedding-party {
     padding: 15% 10%;
+    overflow: hidden;
   }
 }
 
