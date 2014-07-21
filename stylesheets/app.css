@@ -4818,17 +4818,17 @@ body.open a.menu-toggle {
 }
 
 @media only screen and (max-width: 40em) {
-  /* line 69, ../scss/components/_modal.scss */
+  /* line 67, ../scss/components/_modal.scss */
   .modal p.intro {
     display: none;
   }
-  /* line 72, ../scss/components/_modal.scss */
+  /* line 70, ../scss/components/_modal.scss */
   .modal .intro-text {
     padding-top: 3.125rem;
   }
 }
 @media only screen and (min-width: 40.063em) {
-  /* line 80, ../scss/components/_modal.scss */
+  /* line 78, ../scss/components/_modal.scss */
   .modal .icon.close {
     top: 3.125rem;
     right: 3.125rem;
